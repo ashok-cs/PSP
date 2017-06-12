@@ -89,3 +89,12 @@ f = 0! + 1! + 2! + … +  n!  		(n >= 0)
 >>> b[2] = False
 >>> id(a) == id(b)
 ```
+## 4.1.7 CLONING LISTS
+1. Modify the program to get the desired output
+```python
+>>> old_stock = [['item1',23],['item2',34],['item3',45]]
+>>> new_stock = old_stock.copy()
+# Add 10 to each item
+>>> for i in range(3):
+        new_stock[i][1] += 10
+# old_stock should not be changed
