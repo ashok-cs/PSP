@@ -228,3 +228,30 @@ mylist = [12,3,45,72,15]
 insertion_sort(mylist)
 print(mylist)
 ```
+
+## 4.5.3 MERGE SORT
+1. Consider `left` and `right` lists of size 1. Merge them in a sorted order.
+```
+Example:
+left = [12]  right = [3]
+merged = [3,12]
+```
+2. Now consider the two sorted lists of unspecified size. Merge them in a sorted order.
+```
+Example:
+left = [12,45]  right = [3,17]
+merged = [3,12,17,45]
+```
+
+3. Divide the list `num` into `left` and `right` halves.
+4. Recursively divide, till the partition size is 1
+```
+Example:
+num = [12,3,45,17,15]
+left = [12,3]
+        left = [12]
+        right = [3]
+right = [17, 15]
+        left = [17]
+        right = [15]
+```
