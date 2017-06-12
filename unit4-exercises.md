@@ -125,6 +125,26 @@ Answer:
 # 4.3 DICTIONARIES
 ## 4.3.1 OPERATIONS AND METHODS
 1. Write the function letters_freq to find the frequency of letters in a string. Return the result as the dictionary.
+2. Find the capital for the given country from  the imported dictionary capital
+```python
+from country import capital
+def find_capital(country):
+        # your code
+
+```
+3. Find the country for the given capital.
+```python
+from country import capital
+def find_country(capital):
+        # your code
+```
+4. Find the countries for the given capitals.
+```python
+from country import capital
+def find_countries(capitals):
+        # your code
+Example: input = [‘New Delhi’,’Washington DC’]  output = [‘India’,’US’]
+```
 
 # 4.4 ADVANCED LIST PROCESSING
 ## 4.4.1 LIST COMPREHENSION
