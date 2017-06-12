@@ -169,3 +169,29 @@ def elapsed(start,end):
         #your code here
 ```
 
+# 4.5 ILLUSTRATIVE PROGRAMS
+## 4.5.1 SELECTION SORT
+
+1. Assume that `first` number in the list is minimum. Exchange, if first> second
+```
+Example
+input = [12,3,15,7,23]	output = [3,12,15,7,23]
+```
+2. Assume that `first` element in the list is minimum. Compare it with every other element. Exchange if it is greater.
+```
+Example:
+[12,23,15,7,3]   As 12<23, don’t exchange.
+[12,23,15,7,3] As 12<15, don’t exchange.
+[12,23,15,7,3] As 12>7, exchange
+[7,23,15,12,3] As 7>3, exchange
+[3,23,15,12,7] Stop. 
+```
+3. Now, the first element is the minimum. Now, bring the next minimum value in the list as the second element.
+```
+Example:
+[3,23,15,12,7] As 23>15, exchange
+[3,15,23,12,7] As 15>12, exchange
+[3,12,23,15,7] As 12>7, exchange
+[3,7,23,15,12] stop
+```
+
