@@ -101,3 +101,20 @@ f = 0! + 1! + 2! + … +  n!  		(n >= 0)
 ```
 ## 4.1.8 LIST PARAMETERS
 1. Write a function `cat_num` which takes a list, say, ```[1,2,3,4,5]``` and modifies to  ```[11,22,33,44,55]``` and returns None.
+
+## 4.2.1 TUPLE ASSIGNMENT
+1. What is the output
+```python
+>>> a,b,c = 10, 00, 000
+>>> (a, b, c)*2
+>>> a,b,c
+```
+
+## 4.2.2 TUPLE AS RETURN VALUE
+2. What is the output
+``` python
+>>>def quotient_reminder(a,b):
+        return a // b, a % b
+>>>quotient_reminder(13,2)
+```
+
