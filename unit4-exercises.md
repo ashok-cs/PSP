@@ -80,8 +80,12 @@ f = 0! + 1! + 2! + … +  n!  		(n >= 0)
 >>> after = id(mylist[1])
 >>> before == after
 ```
-2. What is the output?
+## 4.1.6 ALIASING
+
+1. What is the output?
 ```python
->>> mylist = [34,12,47]
->>> 
+>>> a = [12,'python',True]
+>>> b = a
+>>> b[2] = False
+>>> id(a) == id(b)
 ```
