@@ -51,5 +51,37 @@ f = 0! + 1! + 2! + … +  n!  		(n >= 0)
 3.	Find whether ‘n’ is the factorial number
 
 
-
-
+## 4.1.5 MUTABILITY
+1. What is the output?
+```python
+>>> a = 72
+>>> mylist = [a]
+>>> before = id(mylist)
+>>> mylist[0] = 34
+>>> after = id(mylist)
+>>> before == after
+```
+2. What is the output?
+``` python
+>>> a = 72
+>>> before = id(a)
+>>> a = 34
+>>> after = id(a)
+>>> before == after
+```
+3. What is the output
+```python
+>>> a = 72
+>>> mylist = [[a]*2]
+>>> a = 34
+>>> mylist += [[a]*3]
+>>> before = id(mylist[1])
+>>> mylist[1][2] = 45 
+>>> after = id(mylist[1])
+>>> before == after
+```
+2. What is the output?
+```python
+>>> mylist = [34,12,47]
+>>> 
+```
