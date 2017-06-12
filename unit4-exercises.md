@@ -98,3 +98,6 @@ f = 0! + 1! + 2! + … +  n!  		(n >= 0)
 >>> for i in range(3):
         new_stock[i][1] += 10
 # old_stock should not be changed
+```
+## 4.1.8 LIST PARAMETERS
+1. Write a function `cat_num` which takes a list, say, ```[1,2,3,4,5]``` and modifies to  ```[11,22,33,44,55]``` and returns None.
