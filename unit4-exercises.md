@@ -255,3 +255,39 @@ right = [17, 15]
         left = [17]
         right = [15]
 ```
+
+### Implementation
+```python
+def merge_sort(num):
+    return divide(num)
+
+def divide(num):
+    print(num)
+    if not num or len(num) == 1:
+        return num
+    else:        
+        mid = len(num)//2
+        print("divide left:", end=' ')
+        left = divide(num[:mid])
+        print("divide right:", end=' ')
+        right = divide(num[mid:])        
+        return merge(left,right)
+
+def merge(left, right):
+    merged_list = []
+    print("merging:",left,right,end=' ')
+    while left and right:
+        if left[0] < right[0]:
+            merged_list += [left.pop(0)]
+        else:
+            merged_list += [right.pop(0)]
+    merged_list += left
+    merged_list += right
+    print("merged:",merged_list)
+    return merged_list
+
+mylist=[12,3,45,17,15]
+print("Before sorting:",mylist)
+mylist = merge_sort(mylist)
+print("After sorting:",mylist)
+```
