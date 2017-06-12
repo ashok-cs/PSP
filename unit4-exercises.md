@@ -291,3 +291,53 @@ print("Before sorting:",mylist)
 mylist = merge_sort(mylist)
 print("After sorting:",mylist)
 ```
+## 4.5.4 QUICK SORT
+1. Select last element of the list `num` as `pivot`. 
+2. Find from the front, which element is larger than or equal to `pivot` (`num[front]`)
+Find from the rear next to `pivot`, which element is smaller than `pivot` (`num[rear]`)
+Swap `num[front]` and `num[rear]` if front < rear
+3. Repeat step 2 till front <= rear
+4. Now the first half of `num` holds values `smaller` than `pivot`.
+Second half of `num` excluding `pivot` holds vlaues `larger` than `pivot`.
+`front` points to the middle index.Swap `pivot` and `num[front]`.
+
+
+### Implementation
+```python
+def quick_sort(num):
+    if len(num)<=1:
+        return
+    Qsort(num,0,len(num)-1)
+
+def Qsort(num,first,last):
+    print(num[first:last+1])
+    if first >= last:
+        return        
+    pivot=last
+    front=first
+    rear=last-1
+    print("pivot=",num[pivot])
+    while front <= rear:
+        while num[front] < num[pivot] and front <= last:
+            front += 1
+        while num[rear] >= num[pivot] and rear >= first:
+            rear -= 1
+        if front < rear :
+            num[front],num[rear] = num[rear],num[front]    
+        else:
+            break
+    num[front],num[pivot] = num[pivot],num[front]    
+    if first <= front-1:
+        print("partition small",end=' ')
+        Qsort(num,first, front-1)    
+    if front+1 <= last:
+        print("partition large",end=' ')
+        Qsort(num,front+1,last)
+
+
+# Test
+num=[12,3,17,45,15,12]
+quick_sort(num)
+print(num)
+```
+
