@@ -139,5 +139,13 @@ Answer:
 >>> cols = [1,2]
 >>> row = [12, 'medium', 23.25, True]
 >>> [ row[col] for col in cols]
+```
 
+3. Split the time “7:20 am” and store it in hour and min as integers.(in 24 hour format). Then find the time elapsed and return the value.
+Example: 
+```start: “7:20 am”, end: “12.30 pm” 	output: 5 hr 10 min```
+```python
+def elapsed(start,end):
+        #your code here
+```
 
