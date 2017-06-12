@@ -195,3 +195,36 @@ Example:
 [3,7,23,15,12] stop
 ```
 
+## 4.5.2 INSERTION SORT
+1. Consider the second `element` in the list `num`. Insert  at index 0, if element < first.
+hint: use `insert()`
+2. Remove `element` if it is inserted.
+hint: use `pop()` or `remove`
+3. Now `num[0:1]` is in sorted order. Now, consider the third `element` in the list (`num[2]`).
+Compare with first two elements. 
+Insert at 0, if `element` is less than first.
+Insert at 1, if `element` is less than second.
+Remove num[2], if it is inserted.
+
+
+## Implementation
+```python
+def insertion_sort(num):    
+    for i in range(1,len(num)):
+        element = num[i]
+        inserted = False
+        for j in range(i):
+            if element < num[j]:
+                print(num,"insert",element," at ",j)
+                num.insert(j,element)
+                inserted = True
+                break
+        if inserted:            
+            num.pop(i+1)                   
+
+
+#Test
+mylist = [12,3,45,72,15]
+insertion_sort(mylist)
+print(mylist)
+```python
