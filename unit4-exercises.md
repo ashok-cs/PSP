@@ -1,3 +1,4 @@
+# 4.1 LIST
 ## 4.1.1 LIST OPERATIONS
 
 1. What is the output?
@@ -102,6 +103,8 @@ f = 0! + 1! + 2! + … +  n!  		(n >= 0)
 ## 4.1.8 LIST PARAMETERS
 1. Write a function `cat_num` which takes a list, say, ```[1,2,3,4,5]``` and modifies to  ```[11,22,33,44,55]``` and returns None.
 
+# 4.2 TUPLES
+
 ## 4.2.1 TUPLE ASSIGNMENT
 1. What is the output
 ```python
@@ -111,10 +114,30 @@ f = 0! + 1! + 2! + … +  n!  		(n >= 0)
 ```
 
 ## 4.2.2 TUPLE AS RETURN VALUE
-2. What is the output
+1. Write the function `quotient_reminder` to return quotient and reminder of ```a/b```
+Answer:
 ``` python
 >>>def quotient_reminder(a,b):
         return a // b, a % b
 >>>quotient_reminder(13,2)
 ```
+
+# 4.3 DICTIONARIES
+## 4.3.1 OPERATIONS AND METHODS
+1. Write the function letters_freq to find the frequency of letters in a string. Return the result as the dictionary.
+
+# 4.4 ADVANCED LIST PROCESSING
+## 4.4.1 LIST COMPREHENSION
+1. What is the output?
+```python
+>>> num = [ d**3 for d in range(1,10)]
+>>> num
+```
+
+2. What is the output?
+```python
+>>> cols = [1,2]
+>>> row = [12, 'medium', 23.25, True]
+>>> [ row[col] for col in cols]
+
 
