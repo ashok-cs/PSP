@@ -28,3 +28,13 @@ for n in range(1,10):
    8 34/21	1.619047619047619
    9 55/34	1.6176470588235294
 ```
+## plot phi values
+```
+import matplotlib.pyplot as plt
+from golden_ratio import phi
+
+phi_convergents=[phi(n).__float__()for n in range(1,20)]
+plt.plot(range(1,20),phi_convergents)
+print(phi_convergents)
+plt.show()
+```
