@@ -1,14 +1,15 @@
 # Python - FDP 2
 ## Agenda 
+### Forenoon
 1. Use coder-dojo.sh to run non-test versions and  the style guide checker(PEP8).
 2. Random matrix
 3. Python attributes
 4. Swap research
 5. GCD using prime factorization
-6. Quick sort
-7. Insertion sort
-8. Handling command line arguments
-
+6. Handling command line arguments
+### Afternoon
+7. Quick sort
+8. Insertion sort
 9. Algorithm challenge
 
 
