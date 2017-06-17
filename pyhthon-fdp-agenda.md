@@ -1,16 +1,18 @@
 # Python - FDP 2
 ## Agenda 
 ### Forenoon
-1. Use coder-dojo.sh to run non-test versions and  the style guide checker(PEP8).
-2. Random matrix challenge 
-3. Swap research quiz 
-4. GCD using prime factorization 
-5. Python attributes
-6. Handling command line arguments
+1. How to debug small programs
+2. Use coder-dojo.sh to run non-test versions and  the style guide checker(PEP8).
+3. Random matrix challenge 
+4. Swap research quiz 
+5. GCD using prime factorization 
+6. Python attributes
+7. Handling command line arguments
+
 ### Afternoon
-7. Quick sort (Mr. Nandakumar and Mr. Vivek)
-8. Insertion sort 
-9. Algorithmic challenge (Presentation on favorite algorithms)
+8. Quick sort (Mr. Nandakumar and Mr. Vivek)
+9. Insertion sort 
+10. Algorithmic challenge (Presentation on favorite algorithms)
 
 ### Pre FDP Tasks, if not done:
 1. All of you must enable "watch" on the FDP repository 
