@@ -8,8 +8,8 @@
 5. Python attributes
 6. Handling command line arguments
 ### Afternoon
-7. Quick sort
-8. Insertion sort
+7. Quick sort (Mr. Nandakumar and Mr. Vivek)
+8. Insertion sort 
 9. Algorithmic challenge (Presentation on favorite algorithms)
 
 ### Pre FDP Tasks, if not done:
