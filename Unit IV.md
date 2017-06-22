@@ -111,11 +111,11 @@ We can select the specific subset from the list using slicing. We can either use
 72
 ```
 
-Slicing of the list has the following format:
+List may be sliced into part, from  `start` till `end`.
 
  > ```mylist[start:end:step]```
 
-If step is not mentioned, it is taken as 1 as default. The slice includes the elements from start index upto end (excluding end). The elements are picked in step.
+The elements are picked in steps from `start`. If step is not mentioned, it is taken as 1 as default. The element at `end` is not included. 
 
 ### Example
 ```python
@@ -139,3 +139,25 @@ If step is not mentioned, it is taken as 1 as default. The slice includes the el
 >>> mylist[::-2]
 [21, 72, 48]
 ```
+
+## 4.1.3 LIST METHODS
+### count(x)
+return: Number of occurrences of  x
+```python
+>>> mylist = [12, 12, 34, 34, 34]
+>>> mylist.count(34)
+3
+```
+### Example
+```
+# Filter duplicate entries
+
+### index(x)
+return: the index of first occurance of x
+```python
+>>> mylist.index(34)
+2
+```
+
+
+
