@@ -142,22 +142,99 @@ The elements are picked in steps from `start`. If step is not mentioned, it is t
 
 ## 4.1.3 LIST METHODS
 ### count(x)
-return: Number of occurrences of  x
+return the number of times x appears in the list.
 ```python
 >>> mylist = [12, 12, 34, 34, 34]
 >>> mylist.count(34)
 3
 ```
-### Example
-```
-# Filter duplicate entries
 
 ### index(x)
-return: the index of first occurance of x
+return: the index of first occurence of x
 ```python
 >>> mylist.index(34)
 2
 ```
 
+### insert(index,x)
+insert an item at a given position(index).
+```
+>>> mylist.index(3,34)
+# insert 34 at 3
+```
+list.append(x)
+Add an item to the end of the list; equivalent to a[len(a):] = [x].
+
+list.extend(L)
+Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.
+
+list.remove(x)
+Remove the first item from the list whose value is x. 
+
+list.pop([i])
+Remove the item at the given position in the list, and return it. 
+
+list.sort()
+Sort the items of the list in place
+
+list.reverse()
+Reverse the elements of the list, in place.
+
+Associated methods and attributes of a list may be viewed with `dir(mylist)`.
+
+Exercises:
+```python
+1.	What is the error?
+>>> mylist =  [12, 48, 34, 72, 56]
+>>> mylist.pop(2)
+>>> mylist.append(mylist.index(34))
+2.	What is the output?
+>>> mylist =  [12, 48, 34, 72, 56]
+>>> mylist.remove(34)
+>>> mylist.insert(2,2)
+>>> mylist.sort()
+>>> mylist.reverse()
+>>> mylist.append(mylist.count(2))
+>>> mylist
+```
+
+### 4.1.4 LIST LOOP
+
+List is the collection of iterable items.  Using for loop, you can process each element in the list.
+
+### Example
+Find the maximum number in the list
+
+```python
+def get_maxnumber(numbers):
+ maxval = None
+ for element in numbers:
+   if not maxval or element > maxval:
+     maxval = element
+ return maxval
+ 
+# test
+mylist = [1, 5, 67, 34, 128]
+print(get_maxnumber(mylist))
+```
+
+### Exercise
+1.	Find the sum of N numbers (using List)
+2.	Create list with the following pattern for the input num:
+```
+Example: 
+num = 4   	mylist  = [4, 8, 12, 16, 12, 8, 4]
+num = 3    	mylist = [ 3, 6, 9, 6, 3]
+```
+3.	Create list with the following pattern for the input num:
+```
+Example
+num = 4 	mylist = [1, 2, 3, 5, 6, 7, 9, 10, 11, 13, 14, 15]
+num = 3	 mylist = [1, 2, 4, 5, 7, 8]
+```
+4.	Write a function to find the factorial of ‘n’?
+5.	Find the sum of ‘n’ terms of the series
+> `f = 0! + 1! + 2! + … +  n!  		(n >= 0)`
+6.	Find whether `n` is the factorial number
 
 
