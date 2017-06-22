@@ -30,11 +30,11 @@ The objects in the list can be of same type or of different types.
 ### Example
 
 ```python
->>>grocery = ['bread', 'butter', 'milk']
->>>absentees = [3, 14, 24, 35, 37, 41]
->>>movie_review = ['enthiran', {'5-rating':344, '4-rating': 28, '3-rating':0}]
->>>my_friends = ['akil', 'kapil', 'dhoni']
->>>my_favorite_menu = ['idli','dhosa','pongal']
+>>> grocery = ['bread', 'butter', 'milk']
+>>> absentees = [3, 14, 24, 35, 37, 41]
+>>> movie_review = ['enthiran', {'5-rating':344, '4-rating': 28, '3-rating':0}]
+>>> my_friends = ['akil', 'kapil', 'dhoni']
+>>> my_favorite_menu = ['idli','dhosa','pongal']
 ```
 Lists may be constructed in several ways:
 - Using a pair of square brackets to denote the empty list: []
@@ -52,24 +52,24 @@ Lists may be constructed in several ways:
 
 ### concatenate (+)
 ```python
->>>part1 = ['python','is']
->>>part2 = ['all', 'purpose', 'language']
->>>part1 + part2
+>>> part1 = ['python','is']
+>>> part2 = ['all', 'purpose', 'language']
+>>> part1 + part2
 ['python','is','all', 'purpose', 'language']
 ```
 ### empty list
 ```python
->>>a = []
->>>not a
+>>> a = []
+>>> not a
 True
 ```
 
 ### index
 ```python
->>>mylist = [12, 48, 12, 72, 34, 21]
->>>mylist[1]
+>>> mylist = [12, 48, 12, 72, 34, 21]
+>>> mylist[1]
 48
->>>mylist[0]
+>>> mylist[0]
 12
 ```
 
@@ -248,7 +248,7 @@ If an object is referred by more than one variable name, it is aliased.
 >>> id(a), id(b)
 (140143212216136, 140143212216136)
 ```
-![aliasing example](img/aliasing.jpg)
+![aliasing example](https://github.com/ashok-cs/PSP/raw/master/img/aliasing.jpg)
 
 As list is mutable, a change by one reference is reflected in other reference, as both refer to the same list object.
 ```python
@@ -257,7 +257,7 @@ As list is mutable, a change by one reference is reflected in other reference, a
 [1, 100, 3]
 ```
 ### Exercise
-    What is the output?
+What is the output?
 ```python
 >>> a = [12,'python',True]
 >>> b = a
