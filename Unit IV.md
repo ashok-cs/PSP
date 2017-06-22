@@ -94,10 +94,11 @@ True
 We can select the specific subset from the list using slicing. We can either use a positive index (forward) or negative index(reverse) to refer the particular element or slice in the list.
 
 | Forward index | 	0	| 1	| 2 | 3 | 4 | 5 | 
+|:------|:-------|:-------|:-------|:-------|:-------|:-------|
 | mylist |	12 |	48	| 12 |	72 | 34 |	21 |
-Reverse index	-6	-5	-4	-3	-2	-1
+| Reverse index |	-6|	-5 |	-4 |	-3 |	-2 |	-1 |
 
-
+### Example
 ```python
 >>> mylist = [12, 48, 12, 72, 34, 21]
 >>> mylist
@@ -108,4 +109,33 @@ Reverse index	-6	-5	-4	-3	-2	-1
 34
 >>> mylist[3]
 72
+```
+
+Slicing of the list has the following format:
+
+ > ```mylist[start:end:step]```
+
+If step is not mentioned, it is taken as 1 as default. The slice includes the elements from start index upto end (excluding end). The elements are picked in step.
+
+### Example
+```python
+>>>mylist = [12, 48, 12, 72, 34, 21]
+>>> mylist[1:3]
+[48, 12]
+>>> mylist[2:-2]
+[12, 72]
+>>> mylist[0:3]
+[12, 48, 12]
+>>> mylist[:3]
+[12, 48, 12]
+>>> mylist[3:]
+[72, 34, 21]
+# Elements at odd indices
+>>> mylist[::2]
+[12, 12, 34]
+# In reverse order
+>>> mylist[::-1]
+[21, 34, 72, 12, 48, 12]
+>>> mylist[::-2]
+[21, 72, 48]
 ```
