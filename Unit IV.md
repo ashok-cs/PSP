@@ -183,12 +183,14 @@ Reverse the elements of the list, in place.
 Associated methods and attributes of a list may be viewed with `dir(mylist)`.
 
 Exercises:
-```python
 1.	What is the error?
+```python
 >>> mylist =  [12, 48, 34, 72, 56]
 >>> mylist.pop(2)
 >>> mylist.append(mylist.index(34))
+```
 2.	What is the output?
+```python
 >>> mylist =  [12, 48, 34, 72, 56]
 >>> mylist.remove(34)
 >>> mylist.insert(2,2)
@@ -263,6 +265,236 @@ As list is mutable, a change by one reference is reflected in other reference, a
 >>> id(a) == id(b)
 ```
 
+## 4.1.7 Cloning Lists
+### L.copy()
+create a shallow copy of L
+```python
+>>> a = [2,3,4,[5,6]]
+>>> b = a.copy()
+>>> b[3][1] = 8
+>>> a
+[2, 3, 4, [5, 8]]
+>>> id(b[3]),id(a[3])
+(140522783809160, 140522783809160)
+```
+### deepcopy
+In shallow copy, the nested sublists are not cloned (same id).  In deep copy, they are cloned (different id).
+```python
+>>> from copy import deepcopy
+>>> a = [2,3,4,[5,6]]
+>>> b = deepcopy(a)
+>>> b[3][1] = 8
+>>> a
+[2, 3, 4, [5, 6]]
+>>> id(b[3]),id(a[3])
+(140522755061704, 140522783746376)
+```
+
+### Exercise
+1. Modify the program to get the desired output
+```python
+>>> old_stock = [['item1',23],['item2',34],['item3',45]]
+>>> new_stock = old_stock.copy()
+# Add 10 to each item
+>>> for i in range(3):
+        new_stock[i][1] += 10
+# old_stock should not be changed
+```
+
+## 4.1.8 List parameters
+
+When the list is passed to a function as parameter, the parameter refers to the same object.
+Hence any change in the function gets reflected in the calling stack as well.
+
+### Example
+```python
+def fun(mylist):
+    mylist[2] = 'python'
+    del mylist[3:]
+
+# Test
+olist=[1,2,3,4,5,6,7]
+print("before calling:",olist)
+fun(olist)
+print("after calling:",olist)
+```
+ouput:
+```
+before calling: [1, 2, 3, 4, 5, 6, 7]
+after calling: [1, 2, 'python']
+```
+Write the function ‘chop’ that takes a list, modifies it by removing the first and last elements and returns None.
+```python
+>>> def chop(arglist):
+	del arglist[0]
+	del arglist[-1]
+
+	
+>>> mylist = [1, 2, 3, 4, 5, 6, 7, 8]
+>>> chop(mylist)
+>>> mylist
+[2, 3, 4, 5, 6, 7]
+```
+
+### Exercise
+1. Write a function cat_num which takes a list, say, `[1,2,3,4,5]` and modifies to `[11,22,33,44,55]` (concatenates each element itself) and returns None.
+
+# 4.2 Tuples
+List is the mutable sequence (append, remove,  insert, pop, reverse, sort,  extend and copy methods modify the list).
+Tuple is the immutable sequence.
+Only common methods for tuple and list are index() and count().
+
+
+## 4.2.1 Tuple Assignment
+Multiple variables can be assigned using tuple assignment (tuple unpacking). Parentheses are optional.
+```python
+>>> (a,b,c) = (12,34,48)
+>>> a
+12
+>>> a,b,c
+(12, 34, 48)
+```
+### Exercise
+1. What is the output
+```python
+>>> a,b,c = 10, 00, 000
+>>> (a, b, c)*2
+>>> a,b,c
+```
+
+## 4.2.2 Tuple as return value
+Mutiple variables can be returned from the function using tuple. Parantheses are optional.
+```python
+>>> def myswap(num1, num2):
+	return (num2, num1)
+
+>>> a,b = 12,34
+>>> a,b = myswap(a,b)
+>>> a,b
+(34, 12)
+```
+
+### Exercise
+1. Write the function quotient_reminder to return quotient and reminder of a/b
+
+# 4.3 Dictionaries
+
+Lists and tuples are ordered sequence. The elements are accessed using index.
+Dictionary is the unordered sequence. The elements are accessed using key.
+```python
+>>> days = {'jan':31, 'feb':28, 'mar':31}
+>>> days['jan']
+31
+```
+
+## 4.3.1 Operations and methods
+
+In dictionaries, the elements are stored as “key-value” pair. 
+keys() return all the keys in the dictionary.
+values() return all the values in the dictionary.
+All the items are iterable in dictionary.
+```python
+>>> for mon in days:
+	days[mon]
+31
+28
+31
+```
+
+### Example
+Find the number of donors – blood group wise.
+```python
+def blood_donors(dataset):
+    # empty dictionary
+    donors = {}
+    for blood_group in dataset:
+        if blood_group in donors:
+            donors[blood_group] += 1
+        else:
+            donors[blood_group] = 1
+    return donors
+
+
+#global frame
+dataset = [ 'O+', 'B+', 'B-', 'O-', 'O+',
+            'B+', 'B+', 'O+', 'O+']
+print(blood_donors(dataset))	    
+```
+### Output
+```python
+{'B+': 3, 'O+': 4, 'O-': 1, 'B-': 1}
+```
+
+### Exercise
+1. Write the function letters_freq to find the frequency of letters in a string. Return the result as the dictionary.
+2. Find the capital for the given country from the imported dictionary capital
+```python
+from country import capital
+def find_capital(country):
+        # your code
+```
+3. Find the country for the given capital.
+```python
+from country import capital
+def find_country(capital):
+        # your code
+```
+4. Find the countries for the given capitals.
+```python
+from country import capital
+def find_countries(capitals):
+        # your code
+```
+Example: input = [‘New Delhi’,’Washington DC’]  output = [‘India’,’US’]
+
+# 4.4 Advanced List Processing
+## 4.4.1 List Comprehension
+
+List comprehension is the pythonic way (one liner) to write the list loop.
+
+### Example
+Find the sum of odd numbers in the list.
+```python
+>>> mylist = [1, 2, 3, 4, 5, 6, 7, 8]
+>>> sumval = 0
+>>> for element in mylist:
+	if element % 2 != 0:
+		sumval += element
+
+		
+>>> sumval
+16
+>>> 1+3+5+7
+16
+```
+
+This can be written in one line using list comprehension.
+```python
+>>> sumval = sum([d for d in mylist if d % 2 != 0])
+>>> sumval
+16
+```
+
+Find the pass percentage
+```python
+>>> marks = [ 84, 65, 59, 45, 34, 12, 98, 29]
+>>> pass_count = len([d for d in marks if d>=50])
+>>> total = len(marks)
+>>> pass_count/total
+0.5
+```
+
+Example: Remove duplicates from the list (using dictionary)
+```python
+>>> mylist = [12, 12, 34, 12, 34, 12]
+>>> mylist = list({d:1 for d in mylist})
+>>> mylist
+[12, 34]
+>>> 
+```
+
+
+
 ## 4.5 Illustrative Programs
 ## 4.5.1 Selection sort
 
@@ -322,7 +554,7 @@ selection_sort(numbers):
    If numbers[index] > numbers[j]:
 	    swap (numbers[index], numbers[j])
 ```
-Implementation
+### Implementation
 
 ```python
 def selection_sort(numbers):    
@@ -341,7 +573,7 @@ print("After sorting:",mylist)
 ```
 
 
-Output
+### Output
 ```
 Before sorting: [12, 3, 45, 17, 15]
 Selected index: 0 [3, 12, 45, 17, 15]
@@ -352,9 +584,9 @@ After sorting: [3, 12, 15, 17, 45]
 ```
 
 
-4.5.2 Insertion sort
+## 4.5.2 Insertion sort
 
-Exercises:
+### Exercises
 1. Consider the second element in the list num. Insert at index 0, if element < first. hint: use insert()
 2. Remove element if it is inserted. hint: use pop() or remove
 3. Now num[0:1] is in sorted order. Now, consider the third element in the list (num[2]). Compare with first two elements. Insert at 0, if element is less than first. Insert at 1, if element is less than second. Remove num[2], if it is inserted.
@@ -399,8 +631,6 @@ mylist = [12,3,45,72,15]
 insertion_sort(mylist)
 print(mylist)
 ```
-Output
-
 
 ### Pseudocode (v2)
 ```
@@ -508,7 +738,7 @@ merge(left,right)
 	Append  remaining left and right to merged_list
 ```
 
-Implementation
+### Implementation
 ```python
 def merge_sort(num):
     return divide(num)
@@ -546,7 +776,23 @@ print("After sorting:",mylist)
 ```
 
 ### Output
-![output](img/merge_sort_out.png)
+```
+Before sorting: [12, 3, 45, 17, 15]
+[12, 3, 45, 17, 15]
+divide left: [12, 3]
+divide left: [12]
+divide right: [3]
+merging: [12] [3] merged: [3, 12]
+divide right: [45, 17, 15]
+divide left: [45]
+divide right: [17, 15]
+divide left: [17]
+divide right: [15]
+merging: [17] [15] merged: [15, 17]
+merging: [45] [15, 17] merged: [15, 17, 45]
+merging: [3, 12] [15, 17, 45] merged: [3, 12, 15, 17, 45]
+After sorting: [3, 12, 15, 17, 45]
+```
 
 
 ## 4.5.4 Quick Sort
@@ -626,5 +872,16 @@ print(num)
 ```
 
 Output
-![output](quick_sort_out.png)
+```
+[12, 3, 17, 45, 15, 12]
+pivot= 12
+partition small [3]
+partition large [17, 45, 15, 12]
+pivot= 12
+partition large [45, 15, 17]
+pivot= 17
+partition small [15]
+partition large [45]
+[3, 12, 12, 15, 17, 45]
+```
 
