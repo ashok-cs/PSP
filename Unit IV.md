@@ -324,10 +324,32 @@ selection_sort(numbers):
 ```
 Implementation
 
+```python
+def selection_sort(numbers):    
+    N = len(numbers)    
+    for index in range(N-1):        
+        for j in range(index+1,N):
+            if numbers[index] > numbers[j]:
+                numbers[index], numbers[j] = numbers[j], numbers[index]
+        print("Selected index:",index, numbers)
+
+#Test
+mylist=[12,3,45,17,15]
+print("Before sorting:",mylist)
+selection_sort(mylist)
+print("After sorting:",mylist)
+```
 
 
 Output
-
+```
+Before sorting: [12, 3, 45, 17, 15]
+Selected index: 0 [3, 12, 45, 17, 15]
+Selected index: 1 [3, 12, 45, 17, 15]
+Selected index: 2 [3, 12, 15, 45, 17]
+Selected index: 3 [3, 12, 15, 17, 45]
+After sorting: [3, 12, 15, 17, 45]
+```
 
 
 4.5.2 Insertion sort
@@ -339,45 +361,16 @@ Exercises:
 
 Subsequently, the list num gets sorted.
 
-i
-position to be inserted
-num
-1
-0
-12
-3
-45
-17
-15
-2
-2
-3
-12
-45
-17
-15
-3
-2
-3
-12
-45
-17
-15
-4
-2
-3
-12
-17
-45
-15
-sorted
-3
-12
-15
-17
-45
+|i|position to be inserted|num|
+|:--|--|--|
+1 |0|12	3 45 17 15 
+2 | 2|3 12 45 17 15
+3 | 2| 3 12 45 17 15
+4| 2 | 3 12 17 45 15
+sorted| 3 12 15 17 45
 
-Pseudocode
+### Pseudocode
+```
 insertion_sort(num):
 	for i in range(1,len(num)):
 		element = num[i]
@@ -388,7 +381,9 @@ insert element at j
 and break loop
 		if inserted:
 			remove element from i
-Implementation
+```		
+### Implementation
+```python
 def insertion_sort(num):    
     for i in range(1,len(num)):
         element = num[i]
@@ -403,11 +398,12 @@ def insertion_sort(num):
 mylist = [12,3,45,72,15]
 insertion_sort(mylist)
 print(mylist)
-
+```
 Output
 
 
-Pseudocode (v2)
+### Pseudocode (v2)
+```
 insertion_sort(num):
 	for i in range(1,len(num)):
 		element=num[i]
@@ -415,28 +411,55 @@ insertion_sort(num):
 		while j > 0 and num[j-1] >  element:
 			num[j]= num[j-1]
 		num[j]= element
-
+```
 Implementation (v2)
+```python
+def insertion_sort(num):    
+    for i in range(1,len(num)):
+        element = num[i]        
+        for j in range(i):
+            if element < num[j]:
+                print(num,"insert",element,"at",j)
+                num.insert(j,element)
+                num.pop(i+1)  
+                break                       
+
+# Test
+mylist = [12,3,45,17,15]
+insertion_sort(mylist)
+print(mylist)
+
+```
 
 Output
- 
+```
+[12, 3, 45, 17, 15] insert 3 at 0
+[3, 12, 45, 17, 15] insert 17 at 2
+[3, 12, 17, 45, 15] insert 15 at 2
+[3, 12, 15, 17, 45]
+```
 
-4.5.3 Merge sort
+## 4.5.3 Merge sort
 
 It is divide recursively and conquer approach. 
 
-Exercise:
+### Exercise
 1. Consider left and right lists of size 1. Merge them in a sorted order.
 Example:
+```
 left = [12]  right = [3]
 merged = [3,12]
+```
 2. Now consider the two sorted lists of unspecified size. Merge them in a sorted order.
 Example:
+```
 left = [12,45]  right = [3,17]
 merged = [3,12,17,45]
+```
 3. Divide the list num into left and right halves.
 4. Recursively divide, till the partition size is 1
 Example:
+```
 num = [12,3,45,17,15]
 left = [12,3]
         left = [12]
@@ -446,23 +469,23 @@ right = [45, 17, 15]
         right = [17,15]
 		left = [17]
 		right = [15]
+```
 
-
-Algorithm:
+### Algorithm
 
 1. Divide the list recursively to left and right halves, till the partition size is 1 
 2. Merge the left and right halves in the sorted order
 
-Algorithm for merge
-1. Remove the minimum of two lists left and right  
-and add it to the merged list
+### Algorithm for merge
+1. Remove the minimum of two lists left 
+and right and add it to the merged list 
 till left or right  becomes empty.
 2. Append the remaining elements of left and right  to merged list
 
 Note: Both left and right are in sorted order, before merging.
 
 Pseudo code
-
+```
 merge_sort(num)
 	return divide(num)
 
@@ -483,10 +506,10 @@ merge(left,right)
 		else:
 			Pop right[0] and add it to merged_list
 	Append  remaining left and right to merged_list
-
+```
 
 Implementation
-
+```python
 def merge_sort(num):
     return divide(num)
 
@@ -515,103 +538,36 @@ def merge(left, right):
     print("merged:",merged_list)
     return merged_list
 
+# Test
 mylist=[12,3,45,17,15]
 print("Before sorting:",mylist)
 mylist = merge_sort(mylist)
 print("After sorting:",mylist)
+```
+
+### Output
+![output](img/merge_sort_out.png)
 
 
-Output:
+## 4.5.4 Quick Sort
 
-
-
-
-
-
-4.5.4 Quick Sort
-
-Exercises
+#### Exercises
 1. Select last element of the list num as pivot.
-2. Find from the front, which element is larger than or equal to pivot (num[front]) Find from the rear next to pivot, which element is smaller than pivot (num[rear]) Swap num[front] and num[rear] if front < rear
-3. Repeat step 2 till front <= rear
+2. Find from the front, which element is larger than or equal to pivot (`num[front]`) Find from the rear next to pivot, which element is smaller than pivot (`num[rear]`) Swap `num[front]` and `num[rear]` if `front` < `rear`
+3. Repeat step 2 till `front` <= `rear`
 4. Now the first half of num holds values smaller than pivot. Second half of num excluding pivot holds vlaues larger than pivot. Now, front points to the start of the larger partition. Swap pivot and num[front]. to bring pivot to the middle. 
 Example
-
 num = [12,3,17,45,15,12]
+![example](quick_sort_pass.png)
 
-12
-3
-17
-45
-15
-12
-front
-
-
-
-rear
-pivot
-15
-
-
-
-12
-
-
-front
-
-
-
-
-
-
-front
-
-
-
-
-
-
-rear
-
-
-
-
-rear
-
-
-
-
-rear
-
-
-
-
-
-
-12
-
-
-17
-12
-3
-12
-45
-15
-17
-partition with values 
-‘smaller’ than pivot 
-pivot
-large
-
-
-Algorithm
+### Algorithm
 1. Pick last element as a pivot from the num list 
 2. Divide num into small and large partitions
 which contain elements smaller or larger than pivot
 3. Recursively divide till partition size becomes 1
 
-Pseudocode:
+### Pseudocode
+```
 Qsort(num,firt,last):
 pivot=last
 front=first
@@ -627,11 +583,11 @@ swap num[front],pivot
 
 Qsort(num,first, front-1)  # partition small recursively
 Qsort(num,front+1,last)  # partition large recursively
+```
 
 
-
-Implementation
-
+### Implementation
+```python
 def quick_sort(num):
     if len(num)<=1:
         return
@@ -667,6 +623,8 @@ def Qsort(num,first,last):
 num=[12,3,17,45,15,12]
 quick_sort(num)
 print(num)
+```
 
 Output
+![output](quick_sort_out.png)
 
