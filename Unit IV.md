@@ -73,7 +73,7 @@ True
 12
 ```
 
-Exercises:
+### Exercises
 1.	What is the output?
 ```python
 >>> a = 10
@@ -88,6 +88,15 @@ Exercises:
 >>> mylist += ['than','implicit']
 >>> mylist
 ```
+
+## 4.1.2 LIST SLICES
+
+We can select the specific subset from the list using slicing. We can either use a positive index (forward) or negative index(reverse) to refer the particular element or slice in the list.
+
+| Forward index | 	0	| 1	| 2 | 3 | 4 | 5 | 
+| mylist |	12 |	48	| 12 |	72 | 34 |	21 |
+Reverse index	-6	-5	-4	-3	-2	-1
+
 
 ```python
 >>> mylist = [12, 48, 12, 72, 34, 21]
