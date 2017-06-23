@@ -742,13 +742,13 @@ After sorting: [3, 12, 15, 17, 45]
 
 Subsequently, the list num gets sorted.
 
-|i|position to be inserted|num|
+|i|position to be inserted|num|description
 |:--|--|--|
-1 |0|12	3 45 17 15 
-2 | 2|3 12 45 17 15
-3 | 2| 3 12 45 17 15
-4| 2 | 3 12 17 45 15
-sorted| 3 12 15 17 45
+1 |0|12	3 45 17 15    |unsorted
+2 | 2|3 12 45 17 15| insert 3 at 0
+3 | 2| 3 12 45 17 15 | No change
+4| 2 | 3 12 17 45 15 | insert 17 at 2
+sorted| | 3 12 15 17 45| insert 15 at 2
 
 ### Pseudocode
 ```
