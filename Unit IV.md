@@ -961,76 +961,30 @@ num = [12,3,17,45,15,12]
 which contain elements smaller or larger than pivot
 3. Recursively divide till partition size becomes 1
 
-### Pseudocode
+### Pseudo code
 ```
-Qsort(num,firt,last):
-pivot=last
-front=first
-rear=last-1
-while front < rear:
-      increment front till num[front]< pivot
-      decrement rear till  num[rear] >= pivot
-      if front <rear:
-         swap num[front],num[rear]
-      else:
-          break
-swap num[front],pivot
-
-Qsort(num,first, front-1)  # partition small recursively
-Qsort(num,front+1,last)  # partition large recursively
+quicksort(s):
+	if s contains less than 2 elements:
+		return s
+	pick an random element in s as pivot
+	small = elements in s that are smaller than pivot
+	equal = elements in s that are equal to pivot
+	large = elements in s that are larger than pivot
+	return quicksort(small) + equal + quicksort(large)
 ```
-
 
 ### Implementation
 ```python
-def quick_sort(num):
-    if len(num)<=1:
-        return
-    Qsort(num,0,len(num)-1)
-
-def Qsort(num,first,last):
-    print(num[first:last+1])
-    if first >= last:
-        return        
-    pivot=last
-    front=first
-    rear=last-1
-    print("pivot=",num[pivot])
-    while front <= rear:
-        while num[front] < num[pivot] and front <= last:
-            front += 1
-        while num[rear] >= num[pivot] and rear >= first:
-            rear -= 1
-        if front < rear :
-            num[front],num[rear] = num[rear],num[front]    
-        else:
-            break
-    num[front],num[pivot] = num[pivot],num[front]    
-    if first <= front-1:
-        print("partition small", end=' ')
-        Qsort(num,first, front-1)    
-    if front+1 <= last:
-        print("partition large", end=' ')
-        Qsort(num,front+1,last)
-
-
-# Test
-num=[12,3,17,45,15,12]
-quick_sort(num)
-print(num)
-```
-
-Output
-```
-[12, 3, 17, 45, 15, 12]
-pivot= 12
-partition small [3]
-partition large [17, 45, 15, 12]
-pivot= 12
-partition large [45, 15, 17]
-pivot= 17
-partition small [15]
-partition large [45]
-[3, 12, 12, 15, 17, 45]
+import random
+def quicksort(s):
+	len_s = len(s)
+	if len_s < 2:
+		return s
+	random_index = random.randrange(0,len_s)	
+	pivot = s[random_index]	
+	small = [ x for x in s if x < pivot]
+	equal = [ x for x in s if x == pivot]
+	large = [ x for x in s if x > pivot]	
+	return quicksort(small) + equal + quicksort(large)
 ```
 
