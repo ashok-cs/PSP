@@ -312,7 +312,9 @@ When you assign another object to the same variable, it is saved in new location
 >>> 
 ```
 Thus the data is ‘immutable’ (not changeable or erasable). All datatypes in python such as int, bool, tuple are immutable. 
+
 ![datatypes and mutability](https://github.com/kgisl/pythonFDP/raw/master/img/mutablePython.png)
+
 Only exceptions are lists,sets and dictionaries, which are mutable (changeable).
 **Mutable **: The id of the object is the same even after the value is changed.
 ```python
