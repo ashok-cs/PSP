@@ -140,6 +140,15 @@ The elements are picked in steps from `start`. If step is not mentioned, it is t
 [21, 72, 48]
 ```
 
+Slice can be passed as an object as well.
+```python
+>>>mylist = [12, 48, 12, 72, 34, 21]
+>>> start, end, step = 1, None, 2
+>>> items = slice(start, end, step)
+>>> mylist[items]
+[48, 72, 21]
+```
+
 ## 4.1.3 LIST METHODS
 ### count(x)
 return the number of times x appears in the list.
@@ -159,20 +168,58 @@ return: the index of first occurence of x
 ### insert(index,x)
 insert an item at a given position(index).
 ```
->>> mylist.index(3,34)
-# insert 34 at 3
+>>> mylist
+[12, 12, 34, 34, 34]
+>>> mylist.insert(3,10)
+# insert 34 at position 3
+>>> mylist
+[12, 12, 34, 10, 34, 34]
 ```
 list.append(x)
 Add an item to the end of the list; equivalent to a[len(a):] = [x].
+```
+>>> mylist
+[12, 12, 34, 34, 34]
+>>> mylist.append([2,3])
+>>> mylist
+[12, 12, 34, 34, 34,[2,3]]
+```
 
 list.extend(L)
 Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.
+```
+>>> mylist
+[12, 12, 34, 34, 34]
+>>> mylist.extend([2,3])
+>>> mylist
+[12, 12, 34, 34, 34, 2, 3]
+```
 
 list.remove(x)
 Remove the first item from the list whose value is x. 
+```
+>>> mylist
+[12, 12, 34, 34, 34]
+>>> mylist.remove(34)
+>>> mylist
+[12, 12, 34, 34]
+```
 
 list.pop([i])
 Remove the item at the given position in the list, and return it. 
+If `i` is not mentioned, the last element is popped out.
+```
+>>> mylist
+[12, 12, 34, 34, 34]
+>>> mylist.pop(2)
+34
+>>> mylist
+[12, 12, 34, 34]
+>>> mylist.pop()
+>>> mylist
+[12, 12, 34]
+
+```
 
 list.sort()
 Sort the items of the list in place
@@ -238,6 +285,67 @@ num = 3	 mylist = [1, 2, 4, 5, 7, 8]
 5.	Find the sum of ‘n’ terms of the series
 > `f = 0! + 1! + 2! + … +  n!  		(n >= 0)`
 6.	Find whether `n` is the factorial number
+
+
+## 4.1.5 MUTABILITY
+
+Everything is an object in python. Every object has an identity(id) and value(mutable or immutable).
+**Immutable **: The value of the object can not be changed.
+
+For example, when a variable ‘num1’ is created, python allocates the memory location for the constant 72 and creates the unique identifier to refer that location. The variable num1 just refers to the memory location of the object 72.
+```python
+>>> num1 = 72
+>>> type(num1)
+<class 'int'>
+>>> id(72)
+1695636320
+>>> id(num1)
+1695636320
+```
+When you assign another object to the same variable, it is saved in new location, without modifying the old object (72).
+```python
+>>> num1 = 40
+>>> id(40)
+1695635808
+>>> id(num1)
+1695635808
+>>> 
+```
+Thus the data is ‘immutable’ (not changeable or erasable). All datatypes in python such as int, bool, tuple are immutable. 
+![datatypes and mutability](https://github.com/kgisl/pythonFDP/raw/master/img/mutablePython.png)
+Only exceptions are lists,sets and dictionaries, which are mutable (changeable).
+**Mutable **: The id of the object is the same even after the value is changed.
+```python
+>>> mylist = [1, 2, 3]
+>>> id(mylist)
+39075392
+>>> mylist[1] = 100
+>>> mylist
+[1, 100, 3]
+>>> id(mylist)
+39075392
+```
+
+The effect of immutability:
+```python
+>>> a = 45
+>>> b = a
+>>> b = 52
+>>> a,b
+(45,52)
+```
+`a` is not altered, when `b` is changed.
+
+The effect of immutability:
+```python
+>>> a = [1, 2, 3]
+>>> b = a
+>>> b[0] = 50
+>>> a
+[50, 2, 3]
+```
+`a` is affected, when `b` is changed.
+
 
 ## 4.1.6 Aliasing
 
@@ -336,8 +444,36 @@ Write the function ‘chop’ that takes a list, modifies it by removing the fir
 [2, 3, 4, 5, 6, 7]
 ```
 
+### Useful links
+
+**Python Visualizer** - http://pythontutor.com visualizes the program execution statement by statement.
+Example:  http://j.mp/greatestKG
+Online Python interpreter - http://repl.it
+Python inbuilt function documentation - http://j.mp/pythonDoc
+
 ### Exercise
 1. Write a function cat_num which takes a list, say, `[1,2,3,4,5]` and modifies to `[11,22,33,44,55]` (concatenates each element itself) and returns None.
+
+## Additional questions
+1. What is the output of the following python code?		
+		for elem in [ 1, 2, 3, 'abc', 99]: 
+			print (elem*2) 
+2. A list contains `n` elements (where `n` is a positive integer and  `0 > n > 10`. Write the necessary python code to produce a list that contains only the last `n-1` elements. Is there a version of the code that does not use any `list` methods whatsoever to achieve the same result?
+3. What is the value of `L` after you run the code below?
+```python
+L = ['c', 'better', 'than', 'assembly', 0]
+for item in L:
+	if item == 0:
+		L[0] = 'python'
+		L[3] = 'language'
+		L.pop()
+	elif item == 'assembly':
+		L[1] = 'multi'
+		L[2] = 'paradigm'
+```
+
+4. If `n` is the size of the list, and `1 < k < n`, how will you find the `k`th largest number in the list of numbers? (a **#GTG** challenge, a Google interview question).
+5. Complete the Hackerrank problem - https://www.hackerrank.com/challenges/python-lists 
 
 # 4.2 Tuples
 List is the mutable sequence (append, remove,  insert, pop, reverse, sort,  extend and copy methods modify the list).
@@ -451,6 +587,19 @@ Example: input = [‘New Delhi’,’Washington DC’]  output = [‘India’,�
 ## 4.4.1 List Comprehension
 
 List comprehension is the pythonic way (one liner) to write the list loop.
+It gives the shorter and cleaner code.
+
+```python
+result = []
+for item in mylist:
+    if condition:
+    	result.append(expression(item))
+```
+
+This can be rewritten using list comprehension.
+```python
+result = [ expression(item) for item in mylist if condition ]
+```
 
 ### Example
 Find the sum of odd numbers in the list.
