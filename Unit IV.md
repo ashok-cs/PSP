@@ -448,10 +448,10 @@ Write the function ‘chop’ that takes a list, modifies it by removing the fir
 
 ### Useful links
 
-**Python Visualizer** - http://pythontutor.com visualizes the program execution statement by statement.
-Example:  http://j.mp/greatestKG
-Online Python interpreter - http://repl.it
-Python inbuilt function documentation - http://j.mp/pythonDoc
+- **Python Visualizer** - http://pythontutor.com visualizes the program execution statement by statement.
+- Example:  http://j.mp/greatestKG
+- Online Python interpreter - http://repl.it
+- Python inbuilt function documentation - http://j.mp/pythonDoc
 
 ### Exercise
 1. Write a function cat_num which takes a list, say, `[1,2,3,4,5]` and modifies to `[11,22,33,44,55]` (concatenates each element itself) and returns None.
@@ -744,8 +744,8 @@ After sorting: [3, 12, 15, 17, 45]
 
 Subsequently, the list num gets sorted.
 
-|i|position to be inserted|num|description
-|:--|--|--|
+|i|position to be inserted|num|description|
+|:--|--|--|--|
 1 |0|12	3 45 17 15    |unsorted
 2 | 2|3 12 45 17 15| insert 3 at 0
 3 | 2| 3 12 45 17 15 | No change
@@ -920,7 +920,8 @@ After sorting: [3, 12, 15, 17, 45]
 4. Now the first half of num holds values smaller than pivot. Second half of num excluding pivot holds vlaues larger than pivot. Now, front points to the start of the larger partition. Swap pivot and num[front]. to bring pivot to the middle. 
 Example
 num = [12,3,17,45,15,12]
-![example](quick_sort_pass.png)
+
+![example](https://github.com/ashok-cs/PSP/raw/master/img/quick_sort_pass.png)
 
 ### Algorithm
 1. Pick last element as a pivot from the num list 
