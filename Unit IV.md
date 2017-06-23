@@ -754,60 +754,25 @@ sorted| 3 12 15 17 45
 ```
 insertion_sort(num):
 	for i in range(1,len(num)):
-		element = num[i]
-		inserted = False
-		for j in range(i):
-			if element < num[j]
-insert element at j 
-and break loop
-		if inserted:
-			remove element from i
-```		
-### Implementation
-```python
-def insertion_sort(num):    
-    for i in range(1,len(num)):
-        element = num[i]
-        for j in range(i):
-            if element < num[j]:
-                print(num,"insert",element,"at",j)
-                num.insert(j,element)
-                num.pop(i+1)
-	        break
-
-#Test
-mylist = [12,3,45,72,15]
-insertion_sort(mylist)
-print(mylist)
-```
-
-### Pseudocode (v2)
-```
-insertion_sort(num):
-	for i in range(1,len(num)):
 		element=num[i]
 		j=i
 		while j > 0 and num[j-1] >  element:
 			num[j]= num[j-1]
 		num[j]= element
 ```
-Implementation (v2)
+
+### Implementation
 ```python
-def insertion_sort(num):    
+def insertion_sort(num):
     for i in range(1,len(num)):
-        element = num[i]        
-        for j in range(i):
-            if element < num[j]:
-                print(num,"insert",element,"at",j)
-                num.insert(j,element)
-                num.pop(i+1)  
-                break                       
-
-# Test
-mylist = [12,3,45,17,15]
-insertion_sort(mylist)
-print(mylist)
-
+        element = num[i]
+        j = i
+        while j > 0 and num[j-1] > element :            
+            num[j] = num[j-1]
+            j -= 1
+        if (j < i ):
+            num[j] = element
+            print(element,"inserted at",j)
 ```
 
 Output
