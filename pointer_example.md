@@ -1,3 +1,11 @@
+## Question
+
+
+## Answer
+
+Error: 
+
+
 ## pass by reference (&)
 
 ```c++
@@ -86,3 +94,112 @@ a[]
 	element 3 = 40
 ```  
 
+## Modifying array
+```c++
+int main(){
+  int limit = 4;
+  int a[] = {10,20,30,40};
+  add_some(a, limit);
+  printf("a[]\n");
+  display(a, limit);
+}
+
+int add_some(int b[], int limit){
+  int sumVal = 0;
+  for (int i=0; i < limit; i++)
+    sumVal += ++b[i];
+  printf("b[]\n");
+  display(b, limit);
+  printf("Sum = %d", sumVal);
+}
+
+
+```
+### output
+```
+b[]
+	element 0 = 11
+	element 1 = 21
+	element 2 = 31
+	element 3 = 41
+Sum = 104
+a[]
+	element 0 = 11
+	element 1 = 21
+	element 2 = 31
+	element 3 = 41
+```
+
+## array reference
+```c++
+  int * & bp = b;
+  while (limit--)
+    sumVal += ++*(bp++);
+```
+
+### output
+same 
+
+## read only reference
+```c++
+  int * const& bp = b;
+  while (limit--)
+    sumVal += ++*(bp++);
+```
+### output
+```
+error: increment of read-only reference 'b'
+```
+
+## Two dimensional array
+```c++
+#include<iostream>
+int add_some(int [][1], int);
+void display(int [], int);
+
+int main(){
+  int limit = 4;
+  int a[][1] = {{10},{20},{30},{40}};
+  add_some(a, limit);
+}
+
+int add_some(int bom[][1], int limit){
+  int sumVal = 0;
+  for (int i = 0; i < limit; i++)
+  {
+    sumVal += ++bom[i][0];
+    printf("%d\n",bom[i][0]);
+  }
+  printf("sum = %d \n", sumVal);
+}
+```
+
+### Output
+```
+11
+21
+31
+41
+sum = 104 
+```
+
+
+## Two dimensional array
+```c++
+#include<iostream>
+int add_some(int [][1], int);
+void display(int [], int);
+
+int main(){
+  int limit = 4;
+  int a[][1] = {{10},{20},{30},{40}};
+  add_some(a, limit);
+}
+
+int add_some(int bom[][1], int limit){
+  int sumVal = 0;
+  int ** bp = bom;
+  while (limit--)
+    sumVal += ++*(*bp)++;
+}
+```
