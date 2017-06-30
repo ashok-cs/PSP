@@ -1,10 +1,14 @@
 ## Question
-
+![pointer question](img/pointer_question.png)
 
 ## Answer
+Error:
+1. Read-only reference can not be incremented
+2. Error in passing multidimensional array to multidimensional pointer
 
-Error: 
-
+```
+Error: error: cannot convert 'int (*)[1]' to 'int**' for argument '1' to 'int add_some(int**, int)'
+```
 
 ## pass by reference (&)
 
