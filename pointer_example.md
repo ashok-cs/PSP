@@ -206,5 +206,21 @@ int add_some(int bom[][1], int limit){
 ### Output
 ```
 error: cannot convert 'int (*)[1]' to 'int**' in initialization
-   int ** bp = bom;
+   int ** bp = bom;   
 ```   
+
+## Invalid conversion
+```c++
+int add_some(int *bom[], int limit){
+  int sumVal = 0;
+  int ** bp = bom;
+  while (limit--)
+    sumVal += ++*(*bp)++;
+}
+```
+
+### Output
+```
+main.cpp:8:20: error: cannot convert 'int (*)[1]' to 'int**' for argument '1' to 'int add_some(int**, int)'
+   add_some(a, limit);
+```
