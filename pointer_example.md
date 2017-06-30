@@ -184,7 +184,7 @@ sum = 104
 ```
 
 
-## Two dimensional array
+## Referencing two dimensional array
 ```c++
 #include<iostream>
 int add_some(int [][1], int);
@@ -203,3 +203,8 @@ int add_some(int bom[][1], int limit){
     sumVal += ++*(*bp)++;
 }
 ```
+### Output
+```
+error: cannot convert 'int (*)[1]' to 'int**' in initialization
+   int ** bp = bom;
+```   
