@@ -72,3 +72,17 @@ void display(int array[], int limit){
 }
 ```
 
+### Output
+```
+b[]
+	element 0 = 10
+	element 1 = 20
+	element 2 = 30
+	element 3 = 40
+a[]
+	element 0 = 10
+	element 1 = 20
+	element 2 = 30
+	element 3 = 40
+```  
+
