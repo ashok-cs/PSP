@@ -1,3 +1,5 @@
+## pass by reference (&)
+
 ```c++
 #include<iostream>
 int add_some(int &);
@@ -14,6 +16,35 @@ int add_some(int & b){
   
 }
 ```
+
+#### Output
+```
+b = 11
+a = 11
+```
+
+## read only reference
+```c++
+#include<iostream>
+int add_some(int &);
+
+int main(){
+  int a = 10;
+  printf("%d\n",a);
+  add_some(a);
+}
+
+int add_some(int & b){
+  b++;
+  printf("b=%d\n",b);
+  
+}
+```
+### output
+```
+  error: (b++) not allowed in read only reference
+```
+
 
 ## passing array 
 ```c++
