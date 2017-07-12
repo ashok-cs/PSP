@@ -1,4 +1,3 @@
-# Merge sort
 ## Sorting
 
 Sorting is the arrangement of set in order
@@ -41,4 +40,18 @@ Write the python code to allot `rollno` for each student.
 students = {‘aakash’: '17CSE01', ‘akil’: '17CSE02', 
             ‘aswin’: '17CSE03' , ‘kapil’: '17CSE04'}
 ```
+
+## Importance
+- Sorting is the essential part of computing. Sorting takes ~ 30% of all the computing time spent.
+- It is easier to `search` an item in the sorted set. Thus, sorting is the pre-requistie for the search algorithms.
+
+# Merge sort
+Now, how do we sort the given array? There are several algorithms to sort an array. Let's see how merge sort works.
+
+
+
+
+
+
+
 
