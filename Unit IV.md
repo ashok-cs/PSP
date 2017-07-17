@@ -912,11 +912,23 @@ Output
 [3, 12, 15, 17, 45]
 ```
 
+#### Related Material
+
+http://interactivepython.org/runestone/static/pythonds/SortSearch/TheInsertionSort.html
+http://interactivepython.org/runestone/static/pythonds/SortSearch/TheSelectionSort.html
+http://bit.ly/insertVisualizer - insertSort in the visualizer
+
+### Exercises
+
+Part 1- https://www.hackerrank.com/challenges/insertionsort1
+Part 2 - https://www.hackerrank.com/challenges/insertionsort2
+Part 3 - https://www.hackerrank.com/challenges/correctness-invariant
+
 ## 4.5.3 Merge sort
 
 It is divide recursively and conquer approach. 
 
-### Exercise
+### Exercises
 1. Consider left and right lists of size 1. Merge them in a sorted order.
 Example:
 ```
@@ -996,7 +1008,7 @@ def divide(num):
         left = divide(num[:mid])
         print("divide right:", end=' ')
         right = divide(num[mid:])        
-        return merge(left,right)
+        return merge(left, right)
 
 def merge(left, right):
     merged_list = []
@@ -1036,6 +1048,8 @@ merging: [45] [15, 17] merged: [15, 17, 45]
 merging: [3, 12] [15, 17, 45] merged: [3, 12, 15, 17, 45]
 After sorting: [3, 12, 15, 17, 45]
 ```
+
+
 
 
 ## 4.5.4 Quick Sort
