@@ -1,21 +1,59 @@
+[ Download in .docx format](https://github.com/ashok-cs/PSP/blob/master/Unit%20IV_PSP.docx)
+
 # UNIT IV: COMPOUND DATA
 ## LISTS, TUPLES, DICTIONARIES
 
+### Content
 Lists, list operations, list slices, list methods, list loop, mutability, aliasing, cloning lists, list parameters; Tuples, tuple assignment, tuple as return value; Dictionaries: operations and methods; advanced list processing - list comprehension, Illustrative programs: selection sort, insertion sort, merge sort, quick sort.
 
-### Objective:
+### Objective
 To use Python data structures –- lists, tuples, dictionaries
 
-### Outcome:
+### Outcome
 Represent compound data using Python  lists, tuples, dictionaries
 
 # 4 COMPOUND DATA
 
 Primitive data types are basic data types such as int, bool and float. Compound data is any data type which is constructed using primitive data types and other compound data types. Python offers different compound data types (sequences) such as lists, tuples and dictionaries.
 
+> A compound data type is one that holds multiple independent values.
+
+### Example
+Create a compound data type to represent a `point` in the cartesian coordinates.
+
+A `point` may be represented with a list, tuple, dictionary or a class in python.
+```python
+x, y = 0, 1   # index
+
+pointA = [2, 3] # list
+print(pointA[x])
+
+pointB = (4, 5) # tuple
+print(pointB[y])
+
+pointC = {'x':6, 'y': 7} # dictionary
+print(pointC['x'])
+
+class Point:
+	def __init__(self, x=0, y=0):
+		self.x = x
+		self.y = y
+
+
+pointD = Point(x=8, y=9)
+print(pointD.x)
+```
+     
+
+
 # 4.1 LISTS
 
 List is the collection (bag) of objects. We extensively use list to store and manipulate data in everyday computing.
+
+> A List is the built-in ordered sequence. 
+> A sequence is an iterable which supports efficient element access using integer indices via the getitem() special method and defines a len() method that returns the length of the sequence. Some built-in sequence types are list, str, tuple, and bytes. 
+
+Despite its name, list is more akin to an array in other languages than to a linked list since access to elements are O(1).
 
 ### Examples
 1.	List of web pages matching the keyword (google)
@@ -43,11 +81,12 @@ Lists may be constructed in several ways:
 - Using the type constructor: list() or list(iterable)
 
 ## 4.1.1 LIST OPERATIONS
+Lists work similarly to strings -- use the len() function and square brackets [ ] to access data, with the first element at index 0. 
 ### repeat (*)
 ```python
 >>> mylist = [1, True, 'python']
 >>> mylist * 2
-[1, True, 'python',1, True, 'python']
+[1, True, 'python', 1, True, 'python']
 ```
 
 ### concatenate (+)
@@ -74,24 +113,26 @@ True
 ```
 
 ### Exercises
-1.	What is the output?
+1.	What is the output for the following code?
 ```python
 >>> a = 10
 >>> mylist = [a]*5
 >>> mylist[3]
 ```
-2.	What is the output?
+2.	What is the output for the following code?
 ```python
 >>> mylist1 = ['In', 'python']
->>> mylist2 = ['explicit','is','better']
+>>> mylist2 = ['explicit', 'is', 'better']
 >>> mylist = mylist1 + mylist2
->>> mylist += ['than','implicit']
+>>> mylist += ['than', 'implicit']
 >>> mylist
 ```
 
 ## 4.1.2 LIST SLICES
 
 We can select the specific subset from the list using slicing. We can either use a positive index (forward) or negative index(reverse) to refer the particular element or slice in the list.
+
+> A slice is an object usually containing a portion of a sequence. A slice is created using the subscript notation, [] with colons between numbers when several are given, such as in variable_name[1:3:5]. The bracket (subscript) notation uses slice objects internally.
 
 | Forward index | 	0	| 1	| 2 | 3 | 4 | 5 | 
 |:------|:-------|:-------|:-------|:-------|:-------|:-------|
@@ -249,7 +290,8 @@ Exercises:
 
 ### 4.1.4 LIST LOOP
 
-List is the collection of iterable items.  Using for loop, you can process each element in the list.
+List is the collection of iterable items.  Using `for` construct, you can process each element in the list. Do not add or remove an element from the list in its `for` loop.
+
 
 ### Example
 Find the maximum number in the list
@@ -266,6 +308,41 @@ def get_maxnumber(numbers):
 mylist = [1, 5, 67, 34, 128]
 print(get_maxnumber(mylist))
 ```
+
+The **in** construct on its own is an easy way to test if an element appears in a list.
+
+```python
+key = 5
+if key in mylist:
+	print("Key found")
+```
+
+You can also use for/in to work on a `str`ing type.
+
+### Range
+The combination of the for-loop and the range() function allow you to build a traditional numeric for loop.
+```python
+  ## print the numbers from 0 through 99
+  for i in range(100):
+    print i
+```
+`range(100)` creates a `range` object, yielding the elements from 0 to 99 (excluding 100).
+`range(5,10)` creates a `range object, yielding the elements from 5 to 9 (excluding 10).
+`range(1, 100, 2)` yields odd numbers till 100.
+
+The general syntax for range is
+`range(start, stop, step)`
+
+
+### `while` Loop
+Python also has the standard while-loop, and the *break* and *continue* statements.
+```python
+  ## Access every 3rd element in a list
+  i = 0
+  while i < len(a):
+    print a[i]
+    i = i + 3
+```    
 
 ### Exercise
 1.	Find the sum of N numbers (using List)
@@ -287,10 +364,14 @@ num = 3	 mylist = [1, 2, 4, 5, 7, 8]
 6.	Find whether `n` is the factorial number
 
 
+
 ## 4.1.5 MUTABILITY
 
 Everything is an object in python. Every object has an identity(id) and value(mutable or immutable).
 **Immutable **: The value of the object can not be changed.
+
+> Mutable objects can change their value but keep their id(). 
+> An immutable object has a fixed value. Immutable objects include numbers, strings and tuples. Such an object cannot be altered. A new object has to be created if a different value has to be stored. They play an important role in places where a constant hash value is needed, for example as a key in a dictionary.
 
 For example, when a variable ‘num1’ is created, python allocates the memory location for the constant 72 and creates the unique identifier to refer that location. The variable num1 just refers to the memory location of the object 72.
 ```python
@@ -352,6 +433,8 @@ The effect of immutability:
 ## 4.1.6 Aliasing
 
 If an object is referred by more than one variable name, it is aliased.
+> Assignment with lists does not make a copy. Instead, assignment makes the two variables point to the one list in memory.
+
 ```python
 >>> a = [1, 2, 3]
 >>> b = a
@@ -401,9 +484,9 @@ In shallow copy, the nested sublists are not cloned (same id).  In deep copy, th
 ```
 
 ### Exercise
-1. Modify the program to get the desired output
+1. Modify the program such that the addition to the `new_stock` won't change the elements in `old_stock`.
 ```python
->>> old_stock = [['item1',23],['item2',34],['item3',45]]
+>>> old_stock = [['item1', 23], ['item2', 34], ['item3', 45]]
 >>> new_stock = old_stock.copy()
 # Add 10 to each item
 >>> for i in range(3):
@@ -413,7 +496,7 @@ In shallow copy, the nested sublists are not cloned (same id).  In deep copy, th
 
 ## 4.1.8 List parameters
 
-When the list is passed to a function as parameter, the parameter refers to the same object.
+When the list is passed to a function as a parameter, the parameter refers to the same object (argument).
 Hence any change in the function gets reflected in the calling stack as well.
 
 ### Example
@@ -454,7 +537,7 @@ Write the function ‘chop’ that takes a list, modifies it by removing the fir
 - Python inbuilt function documentation - http://j.mp/pythonDoc
 
 ### Exercise
-1. Write a function cat_num which takes a list, say, `[1,2,3,4,5]` and modifies to `[11,22,33,44,55]` (concatenates each element itself) and returns None.
+1. Write a function cat_num which takes a list, say, `[1,2,3,4,5]` and modifies to `[11,22,33,44,55]` (concatenates each element itself) and returns None.
 
 ## Additional questions
 1. What is the output of the following python code?		
@@ -650,12 +733,12 @@ Example: Remove duplicates from the list (using dictionary)
 ## 4.5.1 Selection sort
 
 ### Exercises
-1. Assume that first number in the list is minimum. Exchange, if first> second
+1. Assume that first number in the list is minimum. Exchange, if first> second
 Example
 ```
 input = [12,3,15,7,23]	output = [3,12,15,7,23]
 ```
-2. Assume that first element in the list is minimum. Compare it with every other element. Exchange if it is greater. (index selected = 0) 
+2. Assume that first element in the list is minimum. Compare it with every other element. Exchange if it is greater. (index selected = 0) 
 ```
 ### Example
 [12,23,15,7,3]   As 12<23, don’t exchange.
@@ -738,9 +821,9 @@ After sorting: [3, 12, 15, 17, 45]
 ## 4.5.2 Insertion sort
 
 ### Exercises
-1. Consider the second element in the list num. Insert at index 0, if element < first. hint: use insert()
-2. Remove element if it is inserted. hint: use pop() or remove
-3. Now num[0:1] is in sorted order. Now, consider the third element in the list (num[2]). Compare with first two elements. Insert at 0, if element is less than first. Insert at 1, if element is less than second. Remove num[2], if it is inserted.
+1. Consider the second element in the list num. Insert at index 0, if element < first. hint: use insert()
+2. Remove element if it is inserted. hint: use pop() or remove
+3. Now num[0:1] is in sorted order. Now, consider the third element in the list (num[2]). Compare with first two elements. Insert at 0, if element is less than first. Insert at 1, if element is less than second. Remove num[2], if it is inserted.
 
 Subsequently, the list num gets sorted.
 
@@ -790,7 +873,7 @@ Output
 It is divide recursively and conquer approach. 
 
 ### Exercise
-1. Consider left and right lists of size 1. Merge them in a sorted order.
+1. Consider left and right lists of size 1. Merge them in a sorted order.
 Example:
 ```
 left = [12]  right = [3]
@@ -802,7 +885,7 @@ Example:
 left = [12,45]  right = [3,17]
 merged = [3,12,17,45]
 ```
-3. Divide the list num into left and right halves.
+3. Divide the list num into left and right halves.
 4. Recursively divide, till the partition size is 1
 Example:
 ```
@@ -914,10 +997,10 @@ After sorting: [3, 12, 15, 17, 45]
 ## 4.5.4 Quick Sort
 
 #### Exercises
-1. Select last element of the list num as pivot.
-2. Find from the front, which element is larger than or equal to pivot (`num[front]`) Find from the rear next to pivot, which element is smaller than pivot (`num[rear]`) Swap `num[front]` and `num[rear]` if `front` < `rear`
+1. Select last element of the list num as pivot.
+2. Find from the front, which element is larger than or equal to pivot (`num[front]`) Find from the rear next to pivot, which element is smaller than pivot (`num[rear]`) Swap `num[front]` and `num[rear]` if `front` < `rear`
 3. Repeat step 2 till `front` <= `rear`
-4. Now the first half of num holds values smaller than pivot. Second half of num excluding pivot holds vlaues larger than pivot. Now, front points to the start of the larger partition. Swap pivot and num[front]. to bring pivot to the middle. 
+4. Now the first half of num holds values smaller than pivot. Second half of num excluding pivot holds vlaues larger than pivot. Now, front points to the start of the larger partition. Swap pivot and num[front]. to bring pivot to the middle. 
 Example
 num = [12,3,17,45,15,12]
 
@@ -955,4 +1038,3 @@ def quicksort(s):
 	large = [ x for x in s if x > pivot]	
 	return quicksort(small) + equal + quicksort(large)
 ```
-
