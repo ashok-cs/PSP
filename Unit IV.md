@@ -779,7 +779,7 @@ After swapping it with the element at the selected index 0,
 Example:
 [3, 23, 15, 7, 12]
 index = 1
-positionOfMin = 4
+positionOfMin = 3
 After swapping it with the element at the selected index 1,
 [3, 7, 15, 23, 12] 
 ```
