@@ -785,14 +785,14 @@ After swapping it with the element at the selected index 1,
 ```
 If we continue to place the subsequent minimum values, we get the sorted list.
 
-|selected index| before swapping| after swapping |
-|:-------------|----------------|----------------|
-Before sorting | [12, 23, 15, 7, 3]|   |
-Selected index: 0 | [12, 23, 15, 7, 3] |[3, 23, 15, 7, 12] |
-Selected index: 1 | [3, 23, 15, 7, 12] |[3, 7, 15, 23, 12] |
-Selected index: 2 | [3, 7, 15, 23, 12] |[3, 7, 12, 23, 15] |
-Selected index: 3 | [3, 7, 12, 23, 15] |[3, 7, 12, 15, 23] |
-After sorting: | [3, 7, 12, 15, 23] | |
+|selected index| before swapping| positionOfMin | after swapping |
+|:-------------|----------------|----------------| ----------------|
+Before sorting | [12, 23, 15, 7, 3]|  |  |
+ 0 | [12, 23, 15, 7, 3] |  4 | [3, 23, 15, 7, 12] |
+ 1 | [3, 23, 15, 7, 12] | 3 | [3, 7, 15, 23, 12] |
+ 2 | [3, 7, 15, 23, 12] | 4 | [3, 7, 12, 23, 15] |
+ 3 | [3, 7, 12, 23, 15] | 4 | [3, 7, 12, 15, 23] |
+After sorting: | [3, 7, 12, 15, 23] | | |
 
 ### Algorithm
 1. Select an index successively from 0 to N-1 where N = len(numbers)-1
