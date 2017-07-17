@@ -271,13 +271,13 @@ Reverse the elements of the list, in place.
 Associated methods and attributes of a list may be viewed with `dir(mylist)`.
 
 Exercises:
-1.	What is the error?
+1.	What is the error in the following code?
 ```python
 >>> mylist =  [12, 48, 34, 72, 56]
 >>> mylist.pop(2)
 >>> mylist.append(mylist.index(34))
 ```
-2.	What is the output?
+2.	What is the output of the following code?
 ```python
 >>> mylist =  [12, 48, 34, 72, 56]
 >>> mylist.remove(34)
