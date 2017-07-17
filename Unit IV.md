@@ -974,8 +974,34 @@ Output
 
 ## 4.5.3 Merge sort
 
-It is divide recursively and conquer approach. 
-
+> It is divide recursively and conquer approach. 
+![merge sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
+```python
+Before sorting: [6, 5, 3, 1, 8, 7, 2, 3]
+[6, 5, 3, 1, 8, 7, 2, 3]
+divide left: [6, 5, 3, 1]
+divide left: [6, 5]
+divide left: [6]
+divide right: [5]
+merging: [6] [5] merged: [5, 6]
+divide right: [3, 1]
+divide left: [3]
+divide right: [1]
+merging: [3] [1] merged: [1, 3]
+merging: [5, 6] [1, 3] merged: [1, 3, 5, 6]
+divide right: [8, 7, 2, 3]
+divide left: [8, 7]
+divide left: [8]
+divide right: [7]
+merging: [8] [7] merged: [7, 8]
+divide right: [2, 3]
+divide left: [2]
+divide right: [3]
+merging: [2] [3] merged: [2, 3]
+merging: [7, 8] [2, 3] merged: [2, 3, 7, 8]
+merging: [1, 3, 5, 6] [2, 3, 7, 8] merged: [1, 2, 3, 3, 5, 6, 7, 8]
+After sorting: [1, 2, 3, 3, 5, 6, 7, 8]
+```
 ### Exercises
 1. Consider left and right lists of size 1. Merge them in a sorted order.
 Example:
@@ -989,20 +1015,7 @@ Example:
 left = [12,45]  right = [3,17]
 merged = [3,12,17,45]
 ```
-3. Divide the list num into left and right halves.
-4. Recursively divide, till the partition size is 1
-Example:
-```
-num = [12,3,45,17,15]
-left = [12,3]
-        left = [12]
-        right = [3]
-right = [45, 17, 15]
-        left = [45]
-        right = [17,15]
-		left = [17]
-		right = [15]
-```
+3. Divide the list `num` into left and right halves.
 
 ### Algorithm
 
