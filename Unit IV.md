@@ -849,19 +849,35 @@ After sorting: [3, 12, 7, 15, 23]
 ## 4.5.2 Insertion sort
 
 ### Exercises
-1. Consider the second element in the list num. Insert at index 0, if element < first. hint: use insert()
-2. Remove element if it is inserted. hint: use pop() or remove
-3. Now num[0:1] is in sorted order. Now, consider the third element in the list (num[2]). Compare with first two elements. Insert at 0, if element is less than first. Insert at 1, if element is less than second. Remove num[2], if it is inserted.
+1. Consider the second element in the list num. Swap, if second < first. 
+2. Take the third element. Insert it such that first three elements are in sorted order.
 
-Subsequently, the list num gets sorted.
+> Insertion sort always maintains a sorted sublist in the lower positions of the list. Each new item is then “inserted” back into the previous sublist such that the sorted sublist is one item larger. 
 
-|i|position to be inserted|num|description|
-|:--|--|--|--|
-1 |0|12	3 45 17 15    |unsorted
-2 | 2|3 12 45 17 15| insert 3 at 0
-3 | 2| 3 12 45 17 15 | No change
-4| 2 | 3 12 17 45 15 | insert 17 at 2
-sorted| | 3 12 15 17 45| insert 15 at 2
+```
+Get the unsorted array [12, 3, 45, 17, 15] as input
+
+Pick element 3 at index 1 and insert it at 0 
+[3, 12, 45, 17, 15] 
+such that [3,12] is in sorted order.
+
+Pick element 45 at index 2.
+[3, 12, 45, 17, 15]
+No change as [3,12, 45] is already in sorted order
+
+Pick element 17 at index 3 and insert it at 2
+[3, 12, 17, 45, 15] 
+such that [3, 12, 17, 45] is in sorted order
+
+Pick element 15 at index 4 and insert it at 2
+[3, 12, 15, 17, 45]
+such that [3, 12, 15, 17, 45] is in sorted order
+
+Now, the array is sorted completely.
+[3, 12, 15, 17, 45]
+```
+
+![insertion sort](http://interactivepython.org/runestone/static/pythonds/_images/insertionsort.png)
 
 ### Pseudocode
 ```
