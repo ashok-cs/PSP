@@ -744,6 +744,14 @@ Example: Remove duplicates from the list (using dictionary)
 ```
 
 ## 4.5 Illustrative Programs
+
+### Select vs Insert vs Merge vs Quick
+
+In **selectsort**, the position of the update is pre-determined, starting from the end of the list. We then go select the maximum value among the unsorted elements of the list, and swap it with the element in the pre-determined location.
+In **insertsort**, given a key, a copy of a pre-determined element in the list, we insert it at the appropriate location after comparing it with the unsorted elements of the list.
+In **mergesort**, a divide-and-conquer partitioning algorithm (which more often requires extra memory), the input array is divided in two halves, calls itself recursively for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves.
+In **quicksort**, also a divide-and-conquer partitioning algorithm (lends itself to be efficiently implemented in-place without extra memory), the choice of the pivot element determines how the elements get partitioned, and calls itself recursively for the two partitions.
+
 ## 4.5.1 Selection sort
 
 ### Exercises
@@ -1080,7 +1088,7 @@ for elem in [ 1, 2, 3, 'abc', 99]:
 20. What is divide-and-conquer algorithm. Give an example.
 21. What is the difference between merge sort and quick sort.
 22. Write a python code to display the sum of even numbers upto 100.
-23. write a function to find the `factorial` of N. (N!)
+23. Write a function to find the `factorial` of N. (N!)
 24. What will happen, if an variable refering to an immutable object is assigned with a new value.
 25. Write a function to count the number of occurances of a `key` element in a `list`.
 
