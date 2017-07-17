@@ -327,7 +327,7 @@ The combination of the for-loop and the range() function allow you to build a tr
     print i
 ```
 `range(100)` creates a `range` object, yielding the elements from 0 to 99 (excluding 100).
-`range(5,10)` creates a `range object, yielding the elements from 5 to 9 (excluding 10).
+`range(5,10)` creates a `range` object, yielding the elements from 5 to 9 (excluding 10).
 `range(1, 100, 2)` yields odd numbers till 100.
 
 The general syntax for range is
@@ -562,8 +562,9 @@ for item in L:
 
 # 4.2 Tuples
 List is the mutable sequence (append, remove,  insert, pop, reverse, sort,  extend and copy methods modify the list).
-Tuple is the immutable sequence.
-Only common methods for tuple and list are index() and count().
+Tuple is the immutable sequence. Only common methods for tuple and list are index() and count().
+
+> A tuple is a sequence of immutable Python objects. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets.
 
 
 ## 4.2.1 Tuple Assignment
@@ -575,6 +576,7 @@ Multiple variables can be assigned using tuple assignment (tuple unpacking). Par
 >>> a,b,c
 (12, 34, 48)
 ```
+
 ### Exercise
 1. What is the output
 ```python
@@ -583,7 +585,7 @@ Multiple variables can be assigned using tuple assignment (tuple unpacking). Par
 >>> a,b,c
 ```
 
-## 4.2.2 Tuple as return value
+## 4.2.2 Tuple as a return value
 Mutiple variables can be returned from the function using tuple. Parantheses are optional.
 ```python
 >>> def myswap(num1, num2):
@@ -596,12 +598,18 @@ Mutiple variables can be returned from the function using tuple. Parantheses are
 ```
 
 ### Exercise
-1. Write the function quotient_reminder to return quotient and reminder of a/b
+1. Write the function `quotient_reminder` to return quotient and reminder of `a / b`
+```python
+def quotient_reminder(a, b):
+	# return quotient and reminder of a / b
+```
 
 # 4.3 Dictionaries
 
-Lists and tuples are ordered sequence. The elements are accessed using index.
-Dictionary is the unordered sequence. The elements are accessed using key.
+Lists and tuples are ordered sequence. The elements are accessed using index. Dictionary is the unordered sequence. The elements are accessed using key.
+
+> A dictionary is an associative array, where arbitrary keys are mapped to values. The keys can be any object with hash() and eq() methods. Called a hash in Perl.
+
 ```python
 >>> days = {'jan':31, 'feb':28, 'mar':31}
 >>> days['jan']
@@ -610,10 +618,12 @@ Dictionary is the unordered sequence. The elements are accessed using key.
 
 ## 4.3.1 Operations and methods
 
-In dictionaries, the elements are stored as “key-value” pair. 
-keys() return all the keys in the dictionary.
-values() return all the values in the dictionary.
-All the items are iterable in dictionary.
+In dictionaries, the elements are stored as “key-value” pair. keys() return all the keys in the dictionary. values() return all the values in the dictionary. 
+
+> The objects returned from dict.keys(), dict.values(), and dict.items() are called dictionary views. They provide a dynamic view on the dictionary’s entries, which means that when the dictionary changes, the view reflects these changes. To force the dictionary view to become a full list use list(dictview).
+
+All the items are iterable in dictionary. Each key shall be accessed using `for` construct.
+
 ```python
 >>> for mon in days:
 	days[mon]
@@ -648,7 +658,7 @@ print(blood_donors(dataset))
 
 ### Exercise
 1. Write the function letters_freq to find the frequency of letters in a string. Return the result as the dictionary.
-2. Find the capital for the given country from the imported dictionary capital
+2. Find the capital for the given country from the imported dictionary `capital` in the format `{capital: country}`.
 ```python
 from country import capital
 def find_capital(country):
@@ -666,7 +676,7 @@ from country import capital
 def find_countries(capitals):
         # your code
 ```
-Example: input = [‘New Delhi’,’Washington DC’]  output = [‘India’,’US’]
+Example: `input = ['New Delhi', 'Washington DC']  output = ['India', 'US']`
 
 # 4.4 Advanced List Processing
 ## 4.4.1 List Comprehension
@@ -685,6 +695,9 @@ This can be rewritten using list comprehension.
 ```python
 result = [ expression(item) for item in mylist if condition ]
 ```
+> A list comprehension is the compact way to process all or part of the elements in a sequence and return a list with the results.
+
+`result = ['{:#04x}'.format(x) for x in range(256) if x % 2 == 0]` generates a list of strings containing even hex numbers (0x..) in the range from 0 to 255. The `if` clause is optional. If omitted, all elements in range(256) are processed.
 
 ### Example
 Find the sum of odd numbers in the list.
