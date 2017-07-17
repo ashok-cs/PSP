@@ -296,6 +296,8 @@ List is the collection of iterable items.  Using `for` construct, you can proces
 ### Example
 Find the maximum number in the list
 
+![flowchart](img/get_maxnumber.png)
+
 ```python
 def get_maxnumber(numbers):
  maxval = None
