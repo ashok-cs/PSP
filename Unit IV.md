@@ -962,15 +962,15 @@ Output
 
 #### Related Material
 
-http://interactivepython.org/runestone/static/pythonds/SortSearch/TheInsertionSort.html
-http://interactivepython.org/runestone/static/pythonds/SortSearch/TheSelectionSort.html
-http://bit.ly/insertVisualizer - insertSort in the visualizer
+- http://interactivepython.org/runestone/static/pythonds/SortSearch/TheInsertionSort.html
+- http://interactivepython.org/runestone/static/pythonds/SortSearch/TheSelectionSort.html
+- http://bit.ly/insertVisualizer - insertSort in the visualizer
 
 ### Exercises
 
-Part 1- https://www.hackerrank.com/challenges/insertionsort1
-Part 2 - https://www.hackerrank.com/challenges/insertionsort2
-Part 3 - https://www.hackerrank.com/challenges/correctness-invariant
+- Part 1 : https://www.hackerrank.com/challenges/insertionsort1
+- Part 2 : https://www.hackerrank.com/challenges/insertionsort2
+- Part 3 : https://www.hackerrank.com/challenges/correctness-invariant
 
 ## 4.5.3 Merge sort
 
