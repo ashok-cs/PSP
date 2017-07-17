@@ -761,38 +761,38 @@ In **quicksort**, also a divide-and-conquer partitioning algorithm (lends itself
 
 ### Exercises
 1. Assume that first number in the list is minimum. Exchange, if first> second
-Example
 ```
-input = [12,3,15,7,23]	output = [3,12,15,7,23]
+Example:
+input = [12, 3, 15, 7, 23]	output = [3, 12, 15, 7, 23]
 ```
 2. Find the position of minimum element in the list (positionOfMin). Swap it with the element at the selected index 0.
 ```
-### Example
-[12,23,15,7,3]  
+Example:
+[12, 23, 15, 7, 3]  
 index = 0
 positionOfMin = 4 
 After swapping it with the element at the selected index 0,
-[3,23,15,7,12] 
+[3, 23, 15, 7, 12] 
 ```
 3. Now, the first element is the minimum. Now, bring the next minimum value in the list as the second element. (index selected = 1)
 ```
-### Example
-[3,         23,15,7,12]
+Example:
+[3, 23, 15, 7, 12]
 index = 1
 positionOfMin = 4
 After swapping it with the element at the selected index 1,
-[3,12,15,7,23] 
+[3, 7, 15, 23, 12] 
 ```
 If we continue to place the subsequent minimum values, we get the sorted list.
 
-|selected index (outer loop)| numbers|
-|:--------------------------|--------|
-Before sorting | [12, 23, 15, 7, 3]|
-Selected index: 0 | [3, 23, 15, 7, 12] |
-Selected index: 1 | [3, 7, 15, 23, 12] |
-Selected index: 2 | [3, 7, 12, 23, 15] |
-Selected index: 3 | [3, 7, 12, 15, 23] |
-After sorting: | [3, 7, 12, 15, 23] |
+|selected index| before swapping| after swapping |
+|:-------------|----------------|----------------|
+Before sorting | [12, 23, 15, 7, 3]|   |
+Selected index: 0 | [12, 23, 15, 7, 3] |[3, 23, 15, 7, 12] |
+Selected index: 1 | [3, 23, 15, 7, 12] |[3, 7, 15, 23, 12] |
+Selected index: 2 | [3, 7, 15, 23, 12] |[3, 7, 12, 23, 15] |
+Selected index: 3 | [3, 7, 12, 23, 15] |[3, 7, 12, 15, 23] |
+After sorting: | [3, 7, 12, 15, 23] | |
 
 ### Algorithm
 1. Select an index successively from 0 to N-1 where N = len(numbers)-1
