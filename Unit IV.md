@@ -56,12 +56,12 @@ List is the collection (bag) of objects. We extensively use list to store and ma
 Despite its name, list is more akin to an array in other languages than to a linked list since access to elements are O(1).
 
 ### Examples
-1.	List of web pages matching the keyword (google)
-2.	List of friends (facebook)
-3.	List of products prices (amazon)
-4.	List of tasks to do
-5.	List of grocery items to be purchased
-6.	List of students enrolled in a class
+1.	A list of web pages matching the keyword (google)
+2.	A list of friends (facebook)
+3.	A list of products prices (amazon)
+4.	A list of tasks to do
+5.	A list of grocery items to be purchased
+6.	A list of students enrolled in a class
 
 The objects in the list can be of same type or of different types.
 
@@ -450,7 +450,7 @@ As list is mutable, a change by one reference is reflected in other reference, a
 [1, 100, 3]
 ```
 ### Exercise
-What is the output?
+What is the output for the following code?
 ```python
 >>> a = [12,'python',True]
 >>> b = a
@@ -516,7 +516,8 @@ ouput:
 before calling: [1, 2, 3, 4, 5, 6, 7]
 after calling: [1, 2, 'python']
 ```
-Write the function ‘chop’ that takes a list, modifies it by removing the first and last elements and returns None.
+
+Write a function `chop` that takes a list, modifies it by removing the first and last elements and returns None.
 ```python
 >>> def chop(arglist):
 	del arglist[0]
@@ -537,12 +538,14 @@ Write the function ‘chop’ that takes a list, modifies it by removing the fir
 - Python inbuilt function documentation - http://j.mp/pythonDoc
 
 ### Exercise
-1. Write a function cat_num which takes a list, say, `[1,2,3,4,5]` and modifies to `[11,22,33,44,55]` (concatenates each element itself) and returns None.
+1. Write a function `cat_num` which takes a list, say, `[1,2,3,4,5]` and modifies to `[11,22,33,44,55]` (concatenates each element itself) and returns None.
 
-## Additional questions
-1. What is the output of the following python code?		
+### Additional questions
+1. What is the output of the following python code?	
+```
 		for elem in [ 1, 2, 3, 'abc', 99]: 
 			print (elem*2) 
+```
 2. A list contains `n` elements (where `n` is a positive integer and  `0 > n > 10`. Write the necessary python code to produce a list that contains only the last `n-1` elements. Is there a version of the code that does not use any `list` methods whatsoever to achieve the same result?
 3. What is the value of `L` after you run the code below?
 ```python
@@ -578,7 +581,7 @@ Multiple variables can be assigned using tuple assignment (tuple unpacking). Par
 ```
 
 ### Exercise
-1. What is the output
+1. What is the output for the following code
 ```python
 >>> a,b,c = 10, 00, 000
 >>> (a, b, c)*2
@@ -739,8 +742,6 @@ Example: Remove duplicates from the list (using dictionary)
 [12, 34]
 >>> 
 ```
-
-
 
 ## 4.5 Illustrative Programs
 ## 4.5.1 Selection sort
@@ -1051,3 +1052,45 @@ def quicksort(s):
 	large = [ x for x in s if x > pivot]	
 	return quicksort(small) + equal + quicksort(large)
 ```
+
+# 2 Mark Questions
+1. Define list
+2. Define tuple
+3. What any four list methods and their use
+4. What is compound data
+5. How do you concatenate two lists
+6. How do you reverse a list using slice.
+7. What is immutable object
+8. What are the mutable data types in python
+9. Is a `str`ing object mutable?
+10. What is an alias. How do you create an alias for a list.
+11. How do you clone a list
+12. What is the risk in passing mutable objects such as list to a function.
+13. What is the output of the following python code? 
+```
+for elem in [ 1, 2, 3, 'abc', 99]: 
+	print(elem*2)
+```
+14. What is meant by tuple unpacking.
+15. What are the ordered sequences in python
+16. Define dictionary
+17. How do you view all the keys of a dictionary.
+18. What is list comprehension
+19. What is the difference between selection sort and insertion sort.
+20. What is divide-and-conquer algorithm. Give an example.
+21. What is the difference between merge sort and quick sort.
+22. Write a python code to display the sum of even numbers upto 100.
+23. write a function to find the `factorial` of N. (N!)
+24. What will happen, if an variable refering to an immutable object is assigned with a new value.
+25. Write a function to count the number of occurances of a `key` element in a `list`.
+
+# Part B Questions
+1. Explain the use of different list methods with suitable examples.
+2. Describe list comprehension with suitable examples.
+3. Explain how selection sort algorithm works and implement the same in python.
+4. Describe the insertion sort algorithm with python code.
+5. Explain the merge sort algorithm and implement it in python.
+6. Explain the quick sort algorithm and write the python code for the same.
+7. Differentiate the data types list, tuple and dictionary with suitable examples.
+8. Illustrate list loop and list mutability with suitable examples.
+9. Differentiate aliasing and cloning of lists with examples.
