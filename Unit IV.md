@@ -789,11 +789,10 @@ If we continue to place the subsequent minimum values, we get the sorted list.
 |:--------------------------|--------|
 Before sorting | [12, 23, 15, 7, 3]|
 Selected index: 0 | [3, 23, 15, 7, 12] |
-Selected index: 1 | [3, 12, 15, 7, 23] |
-Selected index: 2 | [3, 12, 7, 15, 23] |
-Selected index: 3 | [3, 12, 7, 15, 23] |
-After sorting: | [3, 12, 7, 15, 23] |
-
+Selected index: 1 | [3, 7, 15, 23, 12] |
+Selected index: 2 | [3, 7, 12, 23, 15] |
+Selected index: 3 | [3, 7, 12, 15, 23] |
+After sorting: | [3, 7, 12, 15, 23] |
 
 ### Algorithm
 1. Select an index successively from 0 to N-1 where N = len(numbers)-1
@@ -817,8 +816,8 @@ def selection_sort(numbers):
     N = len(numbers)    
     for index in range(N-1):
         positionOfMin = index
-        for j in range(index+1,N):
-            if numbers[index] > numbers[j]:
+        for j in range(index+1, N):
+            if numbers[positionOfMin] > numbers[j]:
                 positionOfMin = j
         # Fill the selected index with minimum value
         if (positionOfMin != index):
@@ -828,7 +827,8 @@ def selection_sort(numbers):
         print("Selected index:",index, numbers)
 
 #Test
-mylist = [12, 23, 15, 7, 3]
+#mylist=[12,3,45,17,15]
+mylist = [12,23,15,7,3]        
 print("Before sorting:",mylist)
 selection_sort(mylist)
 print("After sorting:",mylist)
@@ -839,10 +839,10 @@ print("After sorting:",mylist)
 ```
 Before sorting: [12, 23, 15, 7, 3]
 Selected index: 0 [3, 23, 15, 7, 12]
-Selected index: 1 [3, 12, 15, 7, 23]
-Selected index: 2 [3, 12, 7, 15, 23]
-Selected index: 3 [3, 12, 7, 15, 23]
-After sorting: [3, 12, 7, 15, 23]
+Selected index: 1 [3, 7, 15, 23, 12]
+Selected index: 2 [3, 7, 12, 23, 15]
+Selected index: 3 [3, 7, 12, 15, 23]
+After sorting: [3, 7, 12, 15, 23]
 ```
 
 
