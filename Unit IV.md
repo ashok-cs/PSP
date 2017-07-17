@@ -757,51 +757,48 @@ In **quicksort**, also a divide-and-conquer partitioning algorithm (lends itself
 
 ## 4.5.1 Selection sort
 
+> In selection sort, select the minimum value from the unordered list and place it in the ordered list (index). 
+
 ### Exercises
 1. Assume that first number in the list is minimum. Exchange, if first> second
 Example
 ```
 input = [12,3,15,7,23]	output = [3,12,15,7,23]
 ```
-2. Assume that first element in the list is minimum. Compare it with every other element. Exchange if it is greater. (index selected = 0) 
+2. Find the position of minimum element in the list (positionOfMin). Swap it with the element at the selected index 0.
 ```
 ### Example
-[12,23,15,7,3]   As 12<23, don’t exchange.
-[12,23,15,7,3] As 12<15, don’t exchange.
-[12,23,15,7,3] As 12>7, exchange
-[7,23,15,12,3] As 7>3, exchange
-[3,23,15,12,7] Stop. 
+[12,23,15,7,3]  
+index = 0
+positionOfMin = 4 
+After swapping it with the element at the selected index 0,
+[3,23,15,7,12] 
 ```
 3. Now, the first element is the minimum. Now, bring the next minimum value in the list as the second element. (index selected = 1)
 ```
 ### Example
-[3,23,15,12,7] As 23>15, exchange
-[3,15,23,12,7] As 15>12, exchange
-[3,12,23,15,7] As 12>7, exchange
-[3,7,23,15,12] stop
+[3,         23,15,7,12]
+index = 1
+positionOfMin = 4
+After swapping it with the element at the selected index 1,
+[3,12,15,7,23] 
 ```
 If we continue to place the subsequent minimum values, we get the sorted list.
 
 |selected index (outer loop)| numbers|
 |:--------------------------|--------|
-Before sorting| 12 3 45 17 15| 
-0| 3 12 45 17 15
-1| 3 12 45 17 15
-2| 3 12 15 45 17
-3| 3 12 15 17 45
+Before sorting | [12, 23, 15, 7, 3]|
+Selected index: 0 | [3, 23, 15, 7, 12] |
+Selected index: 1 | [3, 12, 15, 7, 23] |
+Selected index: 2 | [3, 12, 7, 15, 23] |
+Selected index: 3 | [3, 12, 7, 15, 23] |
+After sorting: | [3, 12, 7, 15, 23] |
 
-Selected index: 2 sorted in steps
-
-|After inner iteration (j)| numbers|
-|:------------------------|--------|
-before sorting| 3 12 45 17 15
-3| 3 12 17 45 15 
-4| 3 12 15 45 17
 
 ### Algorithm
-1. Select an index (i) successively from 0 to len(numbers)-2
-2. Compare numbers[i] with each element in the remaining list
-3. Swap numbers[i] with the element whenever numbers[i] is larger
+1. Select an index successively from 0 to N-1 where N = len(numbers)-1
+2. Find the positionOfMin element in the list from index to N
+3. Swap the element at index with that of positionOfMin, if index != positionOfMin
 
 
 ### Pseudocode
@@ -818,14 +815,20 @@ selection_sort(numbers):
 ```python
 def selection_sort(numbers):    
     N = len(numbers)    
-    for index in range(N-1):        
+    for index in range(N-1):
+        positionOfMin = index
         for j in range(index+1,N):
             if numbers[index] > numbers[j]:
-                numbers[index], numbers[j] = numbers[j], numbers[index]
+                positionOfMin = j
+        # Fill the selected index with minimum value
+        if (positionOfMin != index):
+            temp = numbers[positionOfMin]
+            numbers[positionOfMin] = numbers[index]
+            numbers[index] = temp        
         print("Selected index:",index, numbers)
 
 #Test
-mylist=[12,3,45,17,15]
+mylist = [12, 23, 15, 7, 3]
 print("Before sorting:",mylist)
 selection_sort(mylist)
 print("After sorting:",mylist)
@@ -834,12 +837,12 @@ print("After sorting:",mylist)
 
 ### Output
 ```
-Before sorting: [12, 3, 45, 17, 15]
-Selected index: 0 [3, 12, 45, 17, 15]
-Selected index: 1 [3, 12, 45, 17, 15]
-Selected index: 2 [3, 12, 15, 45, 17]
-Selected index: 3 [3, 12, 15, 17, 45]
-After sorting: [3, 12, 15, 17, 45]
+Before sorting: [12, 23, 15, 7, 3]
+Selected index: 0 [3, 23, 15, 7, 12]
+Selected index: 1 [3, 12, 15, 7, 23]
+Selected index: 2 [3, 12, 7, 15, 23]
+Selected index: 3 [3, 12, 7, 15, 23]
+After sorting: [3, 12, 7, 15, 23]
 ```
 
 
@@ -1021,20 +1024,10 @@ After sorting: [3, 12, 15, 17, 45]
 
 ## 4.5.4 Quick Sort
 
-#### Exercises
-1. Select last element of the list num as pivot.
-2. Find from the front, which element is larger than or equal to pivot (`num[front]`) Find from the rear next to pivot, which element is smaller than pivot (`num[rear]`) Swap `num[front]` and `num[rear]` if `front` < `rear`
-3. Repeat step 2 till `front` <= `rear`
-4. Now the first half of num holds values smaller than pivot. Second half of num excluding pivot holds vlaues larger than pivot. Now, front points to the start of the larger partition. Swap pivot and num[front]. to bring pivot to the middle. 
-Example
-num = [12,3,17,45,15,12]
-
-![example](https://github.com/ashok-cs/PSP/raw/master/img/quick_sort_pass.png)
-
 ### Algorithm
-1. Pick last element as a pivot from the num list 
-2. Divide num into small and large partitions
-which contain elements smaller or larger than pivot
+1. Pick a random element as a pivot from the `num` list 
+2. Divide `num` into small and large partitions
+which contain elements smaller or larger than `pivot`
 3. Recursively divide till partition size becomes 1
 
 ### Pseudo code
@@ -1063,6 +1056,18 @@ def quicksort(s):
 	large = [ x for x in s if x > pivot]	
 	return quicksort(small) + equal + quicksort(large)
 ```
+
+#### Exercises
+1. Select last element of the list num as pivot.
+2. Find from the front, which element is larger than or equal to pivot (`num[front]`). Find from the rear next to pivot, which element is smaller than pivot (`num[rear]`) Swap `num[front]` and `num[rear]` if `front` < `rear`
+3. Repeat step 2 till `front` <= `rear`
+4. Now the first half of num holds values smaller than pivot. Second half of num excluding pivot holds vlaues larger than pivot. Now, front points to the start of the larger partition. Swap pivot and num[front]. to bring pivot to the middle. 
+Example
+num = [12,3,17,45,15,12]
+
+![example](https://github.com/ashok-cs/PSP/raw/master/img/quick_sort_pass.png)
+
+
 
 # 2 Mark Questions
 1. Define list
