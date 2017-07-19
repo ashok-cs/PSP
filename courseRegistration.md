@@ -9,7 +9,8 @@ class Student{
   private:
     string name;
     int rollno;
-    string dept;  
+    string dept;
+ 
   public:
     Student(){}
     Student(string sname, int rno, string sdept )
@@ -21,32 +22,32 @@ class Student{
     string getName(){
       return name;
   }
-  friend int Course::enroll(Student s);
+ 
   
 };
 
 class Course{
   private:
     string courseName;
-    int totalEnrolled;
+    int count;
     Student participants[10];
   public:
     Course(string cName){
       courseName = cName;
-      totalEnrolled = 0;
+      count = 0;
     }
   int enroll(Student s){
-      participants[totalEnrolled] = s;
-      totalEnrolled++;
+      participants[count] = s;
+      count++;
     } 
     
     int display(){
-      for(int i=0; i<totalEnrolled; i++){
+      for(int i=0; i<count; i++){
         cout<<participants[i].getName();
       }
     }
     int getTotal(){
-      return totalEnrolled;
+      return count;
     }
   
 };
