@@ -72,3 +72,31 @@ def remove_duplicates(L):
 ```
 Note: it returns the sorted list without duplicates.
 
+Lab 12: Most frequent word
+```python
+import sys
+def frequent(f):
+    words = f.read().strip().split()
+    count = {}    
+    maxCount = 0                               
+    for word in words:
+        if word in count:
+            count[word] += 1                                                       
+        else:
+            count[word] = 1
+        if count[word] > maxCount:
+            maxWord = word
+            maxCount = count[word]                                   
+    return maxWord, maxCount
+
+
+file = sys.argv[1]
+if file:
+    word, frequency = frequent(open(file))
+    print(file + ',', '"' + word + '"', frequency)   
+```
+
+Output:
+```
+python frequent.py file1.txt -> file1.txt, "the" 12
+```
