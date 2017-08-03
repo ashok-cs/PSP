@@ -20,3 +20,18 @@ def isPrime(num):
             return False
     return True
 ```
+
+lab 4: 
+```python
+def linear_search(mylist, token):
+    for elem in mylist:
+        if elem is token:
+            return True
+    return False
+```
+
+Lab 4: 
+```python
+def linear_search(mylist, token):
+    return (token in mylist)        
+```
