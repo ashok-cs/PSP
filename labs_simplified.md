@@ -10,7 +10,7 @@ def gcd(number1, number2):
 Lab 5:
 ```python
 def generate_primes(min, max):    
-    return [num for num in range(min, max + 1)if isPrime(num)]
+    return [num for num in range(min, max + 1) if isPrime(num)]
 
 def isPrime(num):
     if num < 2:
