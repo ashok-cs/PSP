@@ -47,6 +47,23 @@ def isPrime(num):
             return False
     return True
 ```
+Lab 6: using reduce
+```python
+from functools import reduce
+def get_maxnumber(numbers):
+    return reduce(max_of_two,numbers)
+
+def max_of_two(x,y):
+    return x if x > y else y
+```    
+
+
+Lab 6: using lambda function
+```python
+from functools import reduce
+def get_maxnumber(numbers):
+    return reduce(lambda x, y: x if x > y else y, numbers)
+```    
 
 Lab 7: pythonic way
 ```python
