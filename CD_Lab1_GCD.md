@@ -3,9 +3,9 @@
 ```
 eg: N = 9   returns  '9 is odd'
 ```
-- Write a function `printEven(N)` to print even numbers upto N.
+- Write a function `getEven(N)` to print even numbers upto N.
 ```
-eg: N = 10   print --> 2, 4, 6, 8, 10
+eg: N = 10   returns [2, 4, 6, 8, 10]
 ```
 - Write a function `dec2bin(N)` to convert the decimal number N to its binary representation (in string).
 ```
