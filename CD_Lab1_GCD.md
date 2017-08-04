@@ -19,8 +19,30 @@ eg:  N = 12345   sum = 1 + 2 + 3 + 4 + 5 = 9
 ```
 eg:  N = 12345    sum_odd_digits = 1 + 3 + 5 = 9
 ```
-### 2. Write a function `time_elapsed(start, end)` to find the time elapsed.
+
+### 2. Round with modulo
+- Write a function `ceil10(N)` to round the given N to the nearest **upper** multiple of 10s. 
 ```
-eg: 
+eg:  N = 122    ceil10 = 130
+```
+- Write a function `floor10(N)` to round the given N to the nearest **lower** multiple of 10s. 
+```
+eg:  N = 122    floor10 = 120
+```
+- Write a function `round10(N)` to round the given N to the **nearest** multiple of 10s. 
+```
+eg:  N = 122    floor10 = 120
+```
+- Write a function `check(N, M)` to check whether N is the multiple of M
+```
+eg:  N = 122 M=3    returns   False
+```
+- Write a function add_rem_235(N)` to add all the reminders when N is divided by 2, 3 and 5 respectively.
+```
+eg: N = 122     N % 2 = 0  N % 3 = 2  N % 5 = 2   returns  0 + 2 + 2 = 4
+```
+### 2. Write a function `time_elapsed(start, end)` to find the time elapsed in minutes.
+```
+eg: 7:04 AM, 7:28 AM   time_elapsed = 24 minutes
 ```
 
