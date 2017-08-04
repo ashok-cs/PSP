@@ -1,22 +1,17 @@
 http://cyberdojo1.kgfsl.com/enter/show/D18E54
-1. Write a function isEven(N) to find whether N is even or not.
-eg: N = 9   returns  True
-
-2. Write a function getEven(N) to get even numbers upto N. 
-Use the function isEven()
-eg: N = 10   returns  [2, 4, 6, 8, 10]
-
-
-
-### Simple exercises using modulo operator
 - Write a function `isEven(N)` to find whether N is even or not.
 ```
-eg: N = 9   returns  '9 is odd'
+eg: N = 9   returns  True
 ```
 - Write a function `getEven(N)` to print even numbers upto N.
 ```
 eg: N = 10   returns [2, 4, 6, 8, 10]
 ```
+
+
+
+### Simple exercises using modulo operator
+
 - Write a function `dec2bin(N)` to convert the decimal number N to its binary representation (in string).
 ```
 eg: N = 12   binary_equivalent = 'b1100'
