@@ -1,4 +1,4 @@
-### 1. Simple exercises using modulo operator
+### Simple exercises using modulo operator
 - Write a function `isEven(N)` to find whether N is even or not.
 ```
 eg: N = 9   returns  '9 is odd'
@@ -20,7 +20,7 @@ eg:  N = 12345   sum = 1 + 2 + 3 + 4 + 5 = 9
 eg:  N = 12345    sum_odd_digits = 1 + 3 + 5 = 9
 ```
 
-### 2. Round with modulo
+### Round with modulo
 - Write a function `ceil10(N)` to round the given N to the nearest **upper** multiple of 10s. 
 ```
 eg:  N = 122    ceil10 = 130
@@ -37,11 +37,43 @@ eg:  N = 122    floor10 = 120
 ```
 eg:  N = 122 M=3    returns   False
 ```
-- Write a function add_rem_235(N)` to add all the reminders when N is divided by 2, 3 and 5 respectively.
+- Write a function `add_rem_235(N)` to add all the reminders when N is divided by 2, 3 and 5 respectively.
 ```
 eg: N = 122     N % 2 = 0  N % 3 = 2  N % 5 = 2   returns  0 + 2 + 2 = 4
 ```
-### 2. Write a function `time_elapsed(start, end)` to find the time elapsed in minutes.
+
+### From CodingBat
+- Return true if the given non-negative number is special. Use the % "mod" operator 
+```
+specialEleven(22) → true
+specialEleven(23) → true
+specialEleven(24) → false
+```
+- Return true if the given non-negative number is a multiple of 3 or 5, but not both. Use the % "mod" operator 
+```
+old35(3) → true
+old35(10) → true
+old35(15) → false
+```
+- Return true if the given non-negative number is 1 or 2 more than a multiple of 20. 
+```
+more20(20) → false
+more20(21) → true
+more20(22) → true
+```
+- Return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for example 38 and 39 return true, but 40 returns false. 
+```
+less20(18) → true
+less20(19) → true
+less20(20) → false
+```
+- Given a non-negative number "num", return true if num is within 2 of a multiple of 10. Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2. See also: Introduction to Mod
+```
+nearTen(12) → true
+nearTen(17) → false
+nearTen(19) → true
+```
+### Write a function `time_elapsed(start, end)` to find the time elapsed in minutes.
 ```
 eg: 7:04 AM, 7:28 AM   time_elapsed = 24 minutes
 ```
