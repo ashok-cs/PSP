@@ -1,4 +1,4 @@
-http://cyberdojo1.kgfsl.com/enter/show/D18E54
+### http://cyberdojo1.kgfsl.com/enter/show/D18E54
 - Write a function `isEven(N)` to find whether N is even or not.
 ```
 eg: N = 9   returns  True
@@ -8,14 +8,15 @@ eg: N = 9   returns  True
 eg: N = 10   returns [2, 4, 6, 8, 10]
 ```
 
-
-
-### Simple exercises using modulo operator
+### http://cyberdojo1.kgfsl.com/enter/show/147399
 
 - Write a function `dec2bin(N)` to convert the decimal number N to its binary representation (in string).
 ```
 eg: N = 12   binary_equivalent = 'b1100'
 ```
+
+### Simple exercises using modulo operator
+
 - Write a function `sum_digits(N)` to find the sum of all digits of N.
 ```
 eg:  N = 12345   sum = 1 + 2 + 3 + 4 + 5 = 9
