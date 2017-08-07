@@ -26,18 +26,21 @@ eg:  N = 12345   sum = 1 + 2 + 3 + 4 + 5 = 9
 eg:  N = 12345    sum_odd_digits = 1 + 3 + 5 = 9
 ```
 
-### Round with modulo
+### http://cyberdojo1.kgfsl.com/enter/show/90C018
+
 - Write a function `ceil10(N)` to round the given N to the nearest **upper** multiple of 10s. 
 ```
 eg:  N = 122    ceil10 = 130
 ```
+### http://cyberdojo1.kgfsl.com/enter/show/C66954
 - Write a function `floor10(N)` to round the given N to the nearest **lower** multiple of 10s. 
 ```
 eg:  N = 122    floor10 = 120
 ```
+### http://cyberdojo1.kgfsl.com/enter/show/EBCAA2
 - Write a function `round10(N)` to round the given N to the **nearest** multiple of 10s. 
 ```
-eg:  N = 122    floor10 = 120
+eg:  N = 122    round10 = 120
 ```
 - Write a function `check(N, M)` to check whether N is the multiple of M
 ```
