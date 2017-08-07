@@ -26,12 +26,20 @@ eg:  N = 12345   sum = 1 + 2 + 3 + 4 + 5 = 9
 eg:  N = 12345    sum_odd_digits = 1 + 3 + 5 = 9
 ```
 
-
+###  http://cyberdojo1.kgfsl.com/enter/show/5D793C
 - Write a function `add_rem_235(N)` to add all the reminders when N is divided by 2, 3 and 5 respectively.
 ```
-eg: N = 122     N % 2 = 0  N % 3 = 2  N % 5 = 2   returns  0 + 2 + 2 = 4
-```
+Write a function `add_rem_235(N)` to add all the reminders 
+when N is divided by 2, 3 and 5 respectively.
 
+eg: 
+N = 122     
+N % 2 = 0  
+N % 3 = 2  
+N % 5 = 2  
+
+    The function returns  0 + 2 + 2 = 4
+```
 
 ### http://cyberdojo1.kgfsl.com/enter/show/90C018
 
@@ -56,8 +64,6 @@ eg:  N = 122    round10 = 120
 ```
 eg: N = 12   binary_equivalent = 'b1100'
 ```
-
-
 
 
 ### http://codingbat.com/prob/p100962
@@ -92,9 +98,5 @@ less20(20) → false
 nearTen(12) → true
 nearTen(17) → false
 nearTen(19) → true
-```
-### Write a function `time_elapsed(start, end)` to find the time elapsed in minutes.
-```
-eg: 7:04 AM, 7:28 AM   time_elapsed = 24 minutes
 ```
 
