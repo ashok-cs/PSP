@@ -1,3 +1,5 @@
+# Problems using Modulo operator
+
 ### http://cyberdojo1.kgfsl.com/enter/show/93C14D
 
 - Write a function `check(N, M)` to check whether N is the multiple of M
@@ -66,7 +68,58 @@ eg: N = 12   binary_equivalent = 'b1100'
 ```
 
 
+# Advanced problems
 
+# http://cyberdojo1.kgfsl.com/enter/show/AF85FC 
+
+Find the GCD of the sums of digits of two numbers. 
+
+Example: 
+
+input: 234, 456 
+
+sum1 = 2 + 3 + 4 = 9 
+sum2 = 4 + 5 + 6 = 15 
+
+gcd(sum1,sum2) = 3 
+
+Lab1: GCD 
+
+# http://cyberdojo1.kgfsl.com/enter/show/E65A34 
+
+There are 'x' male students and 'y' female students studying in a class. 
+We need to form students teams of equal size. Teams shall not have the 
+mix of boys and girls. The team size shall not exceed 5. 
+
+Write a function to find the minimum number of teams that can be formed. 
+
+ADDITIONAL CLARIFICATIONS: 
+
+1. When forming teams, no student must be left behind, meaning 
+
+every student must be assigned to a team. 
+
+2. The team size of both females and males chosen must not be 
+
+be the same. 
+
+
+Example: 
+In a classroom, there are '10' boys and '20' girls. 
+Condition: 
+1. Teams should be of equal size. 
+2. The team size shall not exceed 5. 
+
+For a team of '5' members, we will have 6 teams. 
+For a team of '2' members, we will have 15 teams. 
+For a team of '10' members, we will have 3 teams. 
+
+As team size can not exceed 5, you need to return '6' as the 
+minimum teams that can be formed with equal size. 
+
+
+
+# codingbat.com
 
 ### http://codingbat.com/prob/p100962
 
