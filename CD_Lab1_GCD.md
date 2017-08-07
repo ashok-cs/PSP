@@ -15,7 +15,7 @@ eg: N = 10   returns [2, 4, 6, 8, 10]
 eg: N = 12   binary_equivalent = 'b1100'
 ```
 
-### Simple exercises using modulo operator
+### http://cyberdojo1.kgfsl.com/enter/show/8F5ED1
 
 - Write a function `sum_digits(N)` to find the sum of all digits of N.
 ```
