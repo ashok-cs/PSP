@@ -1,3 +1,10 @@
+### http://cyberdojo1.kgfsl.com/enter/show/93C14D
+
+- Write a function `check(N, M)` to check whether N is the multiple of M
+```
+eg:  N = 122 M=3    returns   False
+```
+
 ### http://cyberdojo1.kgfsl.com/enter/show/D18E54
 - Write a function `isEven(N)` to find whether N is even or not.
 ```
@@ -6,13 +13,6 @@ eg: N = 9   returns  True
 - Write a function `getEven(N)` to print even numbers upto N.
 ```
 eg: N = 10   returns [2, 4, 6, 8, 10]
-```
-
-### http://cyberdojo1.kgfsl.com/enter/show/147399
-
-- Write a function `dec2bin(N)` to convert the decimal number N to its binary representation (in string).
-```
-eg: N = 12   binary_equivalent = 'b1100'
 ```
 
 ### http://cyberdojo1.kgfsl.com/enter/show/8F5ED1
@@ -25,6 +25,13 @@ eg:  N = 12345   sum = 1 + 2 + 3 + 4 + 5 = 9
 ```
 eg:  N = 12345    sum_odd_digits = 1 + 3 + 5 = 9
 ```
+
+
+- Write a function `add_rem_235(N)` to add all the reminders when N is divided by 2, 3 and 5 respectively.
+```
+eg: N = 122     N % 2 = 0  N % 3 = 2  N % 5 = 2   returns  0 + 2 + 2 = 4
+```
+
 
 ### http://cyberdojo1.kgfsl.com/enter/show/90C018
 
@@ -42,22 +49,26 @@ eg:  N = 122    floor10 = 120
 ```
 eg:  N = 122    round10 = 120
 ```
-- Write a function `check(N, M)` to check whether N is the multiple of M
+
+### http://cyberdojo1.kgfsl.com/enter/show/147399
+
+- Write a function `dec2bin(N)` to convert the decimal number N to its binary representation (in string).
 ```
-eg:  N = 122 M=3    returns   False
-```
-- Write a function `add_rem_235(N)` to add all the reminders when N is divided by 2, 3 and 5 respectively.
-```
-eg: N = 122     N % 2 = 0  N % 3 = 2  N % 5 = 2   returns  0 + 2 + 2 = 4
+eg: N = 12   binary_equivalent = 'b1100'
 ```
 
-### From CodingBat
-- Return true if the given non-negative number is special. Use the % "mod" operator 
+
+
+
+### http://codingbat.com/prob/p100962
+
+- We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11. Use the % "mod" operator 
 ```
 specialEleven(22) → true
 specialEleven(23) → true
 specialEleven(24) → false
 ```
+### http://codingbat.com/prob/p112564?parent=/doc/practice/mod-introduction.html
 - Return true if the given non-negative number is a multiple of 3 or 5, but not both. Use the % "mod" operator 
 ```
 old35(3) → true
