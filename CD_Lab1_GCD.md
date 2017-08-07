@@ -1,3 +1,5 @@
+### http://cyberdojo1.kgfsl.com/enter/show/ED8198
+
 ### http://cyberdojo1.kgfsl.com/enter/show/93C14D
 
 - Write a function `check(N, M)` to check whether N is the multiple of M
