@@ -13,8 +13,8 @@
  so that it will be easier to track students based on their names/ roll no/ email ID, instead of avatars
 
 ### Create course and modules
-- Option to create course and modules
+- Option to create course and modules (quiz)
 - Categorization of exercises (to assign them to course and modules)
 - Dashboard to view the students progress in the course or modules
-
+- Integration with moodle (?)
 
