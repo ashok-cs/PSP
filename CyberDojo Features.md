@@ -22,9 +22,9 @@ the session shall be opened in the same window.
 - Integration with moodle (?)
 
 ### Badge
-- Creation of badge to be awarded for a problem
+- Creation of a badge to be awarded for a problem
 
 ### Notification
-- Notification of push message from the sesion mentor for the individual student
+- Notification of push message from the session mentor for the individual student
 
 
