@@ -24,3 +24,5 @@
 ### Notification
 - Notification of push message from the sesion mentor for the individual student
 
+### Split window
+- Split window to display the compilation output and code/test cases side by side.
