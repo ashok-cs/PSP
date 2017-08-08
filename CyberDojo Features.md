@@ -8,4 +8,4 @@
 - Dashboard to view the students progress (in various exercises)
 - Categorization of exercises (to create course and modules, based on cyberdojo exercises)
 - Option to disable students from viewing others code for a specific period
-- Auto save option (Now, we need to run once to 
+- Auto save option (Now, we need to run once to save content)
