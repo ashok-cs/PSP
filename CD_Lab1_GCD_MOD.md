@@ -70,7 +70,7 @@ eg: N = 12   binary_equivalent = 'b1100'
 
 # Advanced problems
 
-# http://cyberdojo1.kgfsl.com/enter/show/AF85FC 
+### http://cyberdojo1.kgfsl.com/enter/show/AF85FC 
 
 Find the GCD of the sums of digits of two numbers. 
 
@@ -85,7 +85,7 @@ gcd(sum1,sum2) = 3
 
 Lab1: GCD 
 
-# http://cyberdojo1.kgfsl.com/enter/show/E65A34 
+### http://cyberdojo1.kgfsl.com/enter/show/07274F 
 
 There are 'x' male students and 'y' female students studying in a class. 
 We need to form students teams of equal size. Teams shall not have the 
