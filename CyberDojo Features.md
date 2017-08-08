@@ -18,3 +18,9 @@
 - Dashboard to view the students progress in the course or modules
 - Integration with moodle (?)
 
+### Badge
+- Creation of badge to be awarded for a problem
+
+### Notification
+- Notification of push message from the sesion mentor for the individual student
+
