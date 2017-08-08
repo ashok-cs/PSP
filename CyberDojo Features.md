@@ -36,7 +36,8 @@ Instead, the session shall be opened in the same window.
 ### Badge
 - Creation of a badge to be awarded for a problem
 
-### Notification
-- Notification of push message from the session mentor for the individual student
+### Collaborative development
+- The session mentor shall be able to send individual messages to the students.
+- The session mentor shall be able to interactively edit the files of the students 
 
 
