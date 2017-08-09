@@ -79,6 +79,21 @@ isLeap(2000) --> True
 isLeap(2100) --> False
 isLeap(2016) --> True
 ```
+
+### http://cyberdojo1.kgfsl.com/enter/show/BE76D5
+Write a function to find the number of days for the given month and the year.
+
+Note:
+You need to find out whether given year is leap or not,
+before finding the number of days.
+
+```
+Example:
+days(2, 2012)  -->  29  # as 2012 is the leap year
+days(4, 2010)  -->  30
+days(10, 2017) -->  31
+```
+
 # Advanced problems
 
 ### http://cyberdojo1.kgfsl.com/enter/show/AF85FC 
