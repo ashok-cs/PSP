@@ -66,8 +66,19 @@ eg:  N = 122    round10 = 120
 ```
 eg: N = 12   binary_equivalent = 'b1100'
 ```
+### http://cyberdojo1.kgfsl.com/enter/show/DCFA73
+Write a function to check whether given year is leap or not.
 
+Solution:
+- A year is a leap year, if it is divisible by 4 and not by 100
+- A year is a leap year, if it is divisible by 400
 
+Example:
+```
+isLeap(2000) --> True
+isLeap(2100) --> False
+isLeap(2016) --> True
+```
 # Advanced problems
 
 ### http://cyberdojo1.kgfsl.com/enter/show/AF85FC 
