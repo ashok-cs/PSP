@@ -1,6 +1,6 @@
 # Problems using Modulo operator
 
-### http://cyberdojo1.kgfsl.com/enter/show/93C14D
+### http://cyberdojo1.kgfsl.com/enter/show/3A61E9
 
 - Write a function `check(N, M)` to check whether N is the multiple of M
 ```
