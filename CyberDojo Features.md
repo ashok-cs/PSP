@@ -1,16 +1,16 @@
 # CyberDojo - Desired Features List
 ### General
 - Support for .md file to add images and formulae in the instruction file.
-- Fork option in the front page itself (create as exercise), instead in review page.
+- Fork option in the front page itself (create as exercise), instead of having in the review page.
 
 ![Fork option](img/CD_fork.PNG)
 
-- Enter the session as the 'TestUser' (to verify the exercise, before sharing)
+- Option to enter the session as the 'Test User' (to verify the exercise, before sharing)
 - Option to edit and save the existing session, after publishing 
 (Now, I need to create the new session and notify the users)
 - Option to disable students from viewing others code for a specific period 
 (say, for a week till the lab session is over)
-- Auto save option (Now, we need to run once to save content)
+- Auto save option (Now, we need to run once to save the content)
 - Share link/ copy link option when forked (Now we need to copy sesion ID and create the exercise link manually)
 
 ![share link](img/CD_shareLink.PNG)
