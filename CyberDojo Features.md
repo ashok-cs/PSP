@@ -1,4 +1,15 @@
 # CyberDojo - Desired Features List
+
+### Lab 0 issues (8/21)
+- python interactive shell in the output preferred (to enable input() function)
+-  ID : 54F78D
+- One student closed few sessions unintentionally. When he re-entered the session,
+he got the message "Sorry! Full up";
+- Output compilation is not reliable; 
+It initially showed the combined output of the old script file with the new one
+
+
+
 ### General
 - Support for .md file to add images and formulae in the instruction file.
 - Fork option in the front page itself (create as exercise), instead of having in the review page.
