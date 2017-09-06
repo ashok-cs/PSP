@@ -34,7 +34,7 @@ def guess():
     elif number < myguess:
         print('You guess high')
     else:
-        print('Great! You guess right!')
+        print('Great! You guessed right!')
 
     
 attempt = 10
