@@ -1,3 +1,4 @@
+# Insert a card
 ```python
 order = {
                 'A': 1, '2': 2, '3': 3, '4': 4,
@@ -22,4 +23,24 @@ def insertCard(deck, newCard):
 deck = ['2', '5', '8', '10', 'J', 'K']
 insertCard(deck, '9')
 print(deck)
+```
+# Guess a number
+```python
+from random import randint
+def guess():
+    myguess = int(input())
+    if number > myguess:
+        print('You guessed less')
+    elif number < myguess:
+        print('You guess high')
+    else:
+        print('Great! You guess right!')
+
+    
+attempt = 10
+number = randint(1,100)
+while attempt > 0:
+    guess()        
+    attempt -= 1
+print('Good try! Play again!')
 ```
