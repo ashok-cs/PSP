@@ -44,3 +44,24 @@ def palindrome(number):
   return given == reverse
 ```
 
+# 3. Exchange two values
+```python
+a = 10
+b = 20
+temp = b
+b = a
+a = temp
+print(a, b)
+(20, 10)
+```  
+# 4. Circulate n values
+```python
+N = [2, 3, 4, 5, 6]
+last = len(N)-1
+temp = N[last]
+for index in range(last, 1, -1):
+  N[index] = N[index-1]
+N[0] = temp
+print(N)
+[6, 3, 3, 4, 5]
+```
