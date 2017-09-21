@@ -68,6 +68,15 @@ print(N)
 
 # 5. Distance between two points
 
-$
-\text{ Distance } = \sqrt{(x_2 -x_1)^2 + (y_2- y_1)^2}
-$
+![graph](http://www.mathwarehouse.com/algebra/distance_formula/images/distance-formula-picture.jpg)
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\text{&space;Distance&space;}&space;=&space;\sqrt{(x_2&space;-x_1)^2&space;&plus;&space;(y_2-&space;y_1)^2}&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\text{&space;Distance&space;}&space;=&space;\sqrt{(x_2&space;-x_1)^2&space;&plus;&space;(y_2-&space;y_1)^2}&space;$" title="$ \text{ Distance } = \sqrt{(x_2 -x_1)^2 + (y_2- y_1)^2} $" /></a>
+
+```python
+from math import sqrt
+(X1, Y1) = (1, 2)
+(X2, Y2) = (4, 6)
+Distance = sqrt((X2 -X1)**2 + (Y2- Y1)**2)
+print(Distance)
+5.0
+```
