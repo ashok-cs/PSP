@@ -102,5 +102,36 @@ print(C)
 35.0
 ```
 
+# 7. Lamda Function
+```python
+mul = lambda x,y: x*y
+print(mul(3,4))
+12
+```
 
+# 13. map, filter, reduce
+### filter
+```python
+N = [2, 3, 4, 7, 8, 10]
+even = lambda x: x % 2 == 0
+result = list(filter(even, N))
+print(result)
+[2, 4, 8, 10]
+```
+### map
+```python
+N = [2, 3, 4, 7, 8, 10]
+double = lambda x: x*2
+result = list(map(double, N))
+[4, 6, 8, 14, 16, 20]
+```
 
+### reduce
+```python
+N = [2, 3, 4, 7, 8, 10]
+add = lambda x,y: x+y
+from functools import reduce
+result = reduce(add, N)
+print(result)
+34
+```
