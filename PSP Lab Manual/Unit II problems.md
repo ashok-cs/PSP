@@ -54,7 +54,7 @@ a = temp
 print(a, b)
 (20, 10)
 ```  
-# 4. Circulate n values
+# 4. Circulate N values
 ```python
 N = [2, 3, 4, 5, 6]
 last = len(N)-1
@@ -65,3 +65,9 @@ N[0] = temp
 print(N)
 [6, 3, 3, 4, 5]
 ```
+
+# 5. Distance between two points
+
+$
+\text{ Distance } = \sqrt{(x_2 -x_1)^2 + (y_2- y_1)^2}
+$
