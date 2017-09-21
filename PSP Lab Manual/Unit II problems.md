@@ -146,7 +146,8 @@ math.sqrt(2)
 math.gcd(12,18)
 6
 ```
-# tuple illustration
+# 9. tuple illustration
+```python
 T = (2, 3, 4, 5, 6)
 max(T) # maximum in T   6
 min(T) # minimum in T   2
@@ -156,10 +157,28 @@ L = list(T) # convert tuple to a list
 [2, 3, 4, 5, 6]
 ```
 
-# Recursive function
+# 10. Recursive function
 ```python
 def gcd(a, b):
   if b == 0:
     return a
   return gcd(b, a % b)
+```
+
+# 11. global vs local
+```python
+a = 10 # global
+
+def add20(num):
+  a = 20 # local
+  return num + a
+
+def add10(num):
+  global a
+  return num + a
+
+print(add20(5))
+25
+print(add10(5))
+15
 ```
