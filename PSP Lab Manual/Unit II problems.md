@@ -80,3 +80,27 @@ Distance = sqrt((X2 -X1)**2 + (Y2- Y1)**2)
 print(Distance)
 5.0
 ```
+
+# 6. Celsius to Fahrenheit and vice-versa
+
+### Fahrenheit to Celsius
+<a href="https://www.codecogs.com/eqnedit.php?latex=F&space;=&space;\frac{9}{5}C&space;&plus;&space;32" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F&space;=&space;\frac{9}{5}C&space;&plus;&space;32" title="F = \frac{9}{5}C + 32" /></a>
+
+```python
+C = 35 
+F = 9/5*C + 32
+print(F)
+95.0
+```
+### Celsius to Fahrenheit
+<a href="https://www.codecogs.com/eqnedit.php?latex=C&space;=&space;(F-32)\frac{5}{9}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C&space;=&space;(F-32)\frac{5}{9}" title="C = (F-32)\frac{5}{9}" /></a>
+
+```python
+F = 95.0
+C = (F-32)*(5/9)
+print(C)
+35.0
+```
+
+
+
