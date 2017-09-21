@@ -20,15 +20,15 @@
 
 ```python
 def gcd(a, b):
-  while a != 0:
+  while b != 0:
     a, b = b, a % b
-  return b
+  return a
 ```  
 ### using recursion
 ```python
 def gcd(a, b):
-  if a == 0:
-    return b
+  if b == 0:
+    return a
   return gcd(b, a % b)
 ```
 
