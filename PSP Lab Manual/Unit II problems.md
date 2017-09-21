@@ -136,7 +136,7 @@ print(result)
 34
 ```
 
-8. modules and functions
+# 8. modules and functions
 ```python
 import math
 dir(math)  # Functions in the math module
@@ -145,4 +145,21 @@ math.sqrt(2)
 1.4142135623730951
 math.gcd(12,18)
 6
+```
+# tuple illustration
+T = (2, 3, 4, 5, 6)
+max(T) # maximum in T   6
+min(T) # minimum in T   2
+A = T  # duplicate T
+T[1:4] # (3, 4, 5)
+L = list(T) # convert tuple to a list
+[2, 3, 4, 5, 6]
+```
+
+# Recursive function
+```python
+def gcd(a, b):
+  if b == 0:
+    return a
+  return gcd(b, a % b)
 ```
