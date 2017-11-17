@@ -82,55 +82,29 @@ while 1:
 
 
 ```python
-#Testing Orbits
-
 import pygame
 import math
-import random
-
-
-
-class Particle ():
-    def __init__ (self, x, y, colour=0x000000):
-        self.x = x
-        self.y = y
-        self.vx = 0
-        self.vy = 0
-        self.colour = colour
-
-    def apply_gravity (self, target):
-        """Accelerates the particle towards some mass at target."""
-        dsqd = (self.x - target.x) ** 2 + (self.y - target.y) ** 2 
-        if dsqd == 0:
-            return 
-
-        self.vx += -1 / dsqd * (self.x - target.x) / dsqd ** 0.5
-        self.vy += -1 / dsqd * (self.y - target.y) / dsqd ** 0.5
-
-    def update (self):
-        self.x += self.vx
-        self.y += self.vy
-
+import sys
 
 pygame.init()
-window = pygame.display.set_mode ((600, 400))
-main_surface = pygame.Surface ((600, 400))
+screen = pygame.display.set_mode( (600, 300))
+clock = pygame.time.Clock()
 
-
-p = Particle (200, 100, 0x111111) 
-p.vx = 0
-earth = Particle (200, 200)
-
-
-while (True):
-    pygame.draw.circle (main_surface, 0x00FF00, (earth.x, earth.y), 5, 2)
-    
-    p.apply_gravity (earth)
-    p.update ()
-    pygame.draw.circle (main_surface, p.colour, (int (p.x), int (p.y)), 5, 2)
-
-    window.blit(main_surface, (0, 0))
-    pygame.display.flip()
+while(True) :
+	for event in pygame.event.get() :
+		if event.type == pygame.QUIT:
+			sys.exit()
+	xRadius = 250
+	yRadius = 100
+	for degree in range(0,360,10) :
+		x1 = int(math.cos( degree * 2 * math.pi / 360) * xRadius) + 300
+		y1 = int(math.sin(degree * 2 * math.pi / 360) * yRadius) + 150
+		screen.fill(( 0, 0, 0))
+		pygame.draw.circle(screen, (255, 0, 0), [300, 150], 35)
+		pygame.draw.ellipse(screen, (255, 255, 255), [50, 50, 500, 200], 1)
+		pygame.draw.circle(screen, (0, 0, 255), [x1, y1], 15)
+		pygame.display.flip()
+		clock.tick(5)
 ```
 
-ref: https://github.com/c2huc2hu/orbital_mechanics/blob/master/orbits.py
+ref: https://www.slideshare.net/DrAnurekhaR/simulate-elliptical-orbit-in-pygame
