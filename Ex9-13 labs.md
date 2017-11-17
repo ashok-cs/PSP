@@ -79,3 +79,61 @@ while 1:
     screen.blit(ball, ballrect)
     pygame.display.flip()
 ```
+
+
+```python
+#Testing Orbits
+
+import pygame
+import math
+import random
+
+
+
+class Particle ():
+    def __init__ (self, x, y, colour=0x000000):
+        self.x = x
+        self.y = y
+        self.vx = 0
+        self.vy = 0
+        self.colour = colour
+
+    def apply_gravity (self, target):
+        """Accelerates the particle towards some mass at target."""
+        dsqd = (self.x - target.x) ** 2 + (self.y - target.y) ** 2 #distance squared
+        #g = G*m/dsqd * normalized (self - target)
+
+        if dsqd == 0:
+            return #division by zero is bad!
+
+        self.vx += -1 / dsqd * (self.x - target.x) / dsqd ** 0.5
+        self.vy += -1 / dsqd * (self.y - target.y) / dsqd ** 0.5
+
+    def update (self):
+        self.x += self.vx
+        self.y += self.vy
+
+
+pygame.init()
+window = pygame.display.set_mode ((600, 400))
+main_surface = pygame.Surface ((600, 400))
+
+
+particle1 = Particle (200, 100, 0x111111) 
+earth = Particle (200, 200)
+
+for i, p in enumerate (particles):
+    p.vx = i / 100
+
+while (True):
+    pygame.draw.circle (main_surface, 0x00FF00, (earth.x, earth.y), 5, 2)
+    
+    p.apply_gravity (earth)
+    p.update ()
+    pygame.draw.circle (main_surface, p.colour, (int (p.x), int (p.y)), 5, 2)
+
+    window.blit(main_surface, (0, 0))
+    pygame.display.flip()
+```
+
+ref: https://github.com/c2huc2hu/orbital_mechanics/blob/master/orbits.py
