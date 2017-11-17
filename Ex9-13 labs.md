@@ -100,11 +100,9 @@ class Particle ():
 
     def apply_gravity (self, target):
         """Accelerates the particle towards some mass at target."""
-        dsqd = (self.x - target.x) ** 2 + (self.y - target.y) ** 2 #distance squared
-        #g = G*m/dsqd * normalized (self - target)
-
+        dsqd = (self.x - target.x) ** 2 + (self.y - target.y) ** 2 
         if dsqd == 0:
-            return #division by zero is bad!
+            return 
 
         self.vx += -1 / dsqd * (self.x - target.x) / dsqd ** 0.5
         self.vy += -1 / dsqd * (self.y - target.y) / dsqd ** 0.5
@@ -119,11 +117,10 @@ window = pygame.display.set_mode ((600, 400))
 main_surface = pygame.Surface ((600, 400))
 
 
-particle1 = Particle (200, 100, 0x111111) 
+p = Particle (200, 100, 0x111111) 
+p.vx = 0
 earth = Particle (200, 200)
 
-for i, p in enumerate (particles):
-    p.vx = i / 100
 
 while (True):
     pygame.draw.circle (main_surface, 0x00FF00, (earth.x, earth.y), 5, 2)
