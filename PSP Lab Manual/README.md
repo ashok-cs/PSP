@@ -9,8 +9,11 @@ https://bugs.python.org/file30394/tutorial.pdf
 - https://github.com/AllenDowney/ThinkPython
 
 
-## Unitwise notes
+## Unit-wise notes
 https://github.com/kgisl/pythonFDP/tree/master/units
+
+## The best resume 
+https://gvanrossum.github.io//Resume.html
 
 ## Lab experiments
 https://github.com/kgisl/pythonFDP/tree/master/manual
