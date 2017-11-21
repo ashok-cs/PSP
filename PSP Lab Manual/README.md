@@ -1,6 +1,6 @@
 # Problem solving and python programming
 ## Textbook (must read)
-1. http://www.greenteapress.com/thinkpython/thinkpython.pdf
+1. https://media.readthedocs.org/pdf/howtothink/latest/howtothink.pdf
 2. https://bugs.python.org/file30394/tutorial.pdf
 
 ## Solution(Keys) to the text book exercises
