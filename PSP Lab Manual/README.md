@@ -1,7 +1,7 @@
 # Problem solving and python programming
 ## Textbook (must read)
-http://www.greenteapress.com/thinkpython/thinkpython.pdf
-https://bugs.python.org/file30394/tutorial.pdf
+1. http://www.greenteapress.com/thinkpython/thinkpython.pdf
+2. https://bugs.python.org/file30394/tutorial.pdf
 
 ## Solution(Keys) to the text book exercises
 - https://en.wikibooks.org/wiki/Think_Python/Answers
