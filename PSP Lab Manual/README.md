@@ -3,9 +3,9 @@
 http://www.greenteapress.com/thinkpython/thinkpython.pdf
 
 ## Solution(Keys) to the text book exercises
-https://en.wikibooks.org/wiki/Think_Python/Answers
-https://github.com/epequeno/ThinkPy-Solutions
-https://github.com/AllenDowney/ThinkPython
+- https://en.wikibooks.org/wiki/Think_Python/Answers
+- https://github.com/epequeno/ThinkPy-Solutions
+- https://github.com/AllenDowney/ThinkPython
 
 
 ## Unitwise notes
