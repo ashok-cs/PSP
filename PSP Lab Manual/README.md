@@ -2,8 +2,11 @@
 ## Textbook (must read)
 http://www.greenteapress.com/thinkpython/thinkpython.pdf
 
-## Solution to the text book exercises
+## Solution(Keys) to the text book exercises
 https://en.wikibooks.org/wiki/Think_Python/Answers
+https://github.com/epequeno/ThinkPy-Solutions
+https://github.com/AllenDowney/ThinkPython
+
 
 ## Unitwise notes
 https://github.com/kgisl/pythonFDP/tree/master/units
