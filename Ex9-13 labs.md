@@ -20,34 +20,57 @@ def matrixmulti(X, Y):
 
     return result
 ```    
-
 ```python
 import sys
-def freqWords(S):
-    words = len(S.strip().split())
-    dict = {}
-    for word in words:
-        if word in dict:
-            dict[word] += 1
-        else:
-            dict[word] = 1
+
+def wordcount(S):
+    N = len(S.strip().split())
     return N
-    m = max(dict.values())
-    freq = []
-    for word in dict:
-        if dict[word] == m:
-            freq += [word]
-    return freq
+
 
 
 filename = sys.argv[1]
 try:
-   f = open(arg, 'r')
+   f = open(filename, 'r')
    text = f.read()
    print(wordcount(text))
    f.close()
 except:
    print("File not available!")
+   
+
+```
+
+
+```python
+import sys
+def freqWords(S):
+    words = S.strip().split()    
+    d = {}
+    for word in words:
+        if word in d:
+            d[word] += 1
+        else:
+            d[word] = 1    
+    m = max(d.values())    
+    freq = []
+    for word in d.keys():
+        if d[word] == m:
+            freq += [word]    
+    return freq
+
+
+filename = sys.argv[1]
+try:
+   print(filename)
+   f = open(filename, 'r')
+   text = f.read()
+   print(text)
+   print('freq words:', freqWords(text))
+   f.close()
+except:
+   print("freqWords: File not available!")
+   print(sys.argv)
 ```
 
 ```python
