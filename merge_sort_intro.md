@@ -1,3 +1,16 @@
+## List mutability
+
+```python
+>>> def change(L):
+	L[0] = 'python'
+
+	
+>>> mylist = [12, 3, 45, 2]
+>>> change(mylist)
+>>> mylist
+['python', 3, 45, 2]
+```
+
 ## Selection sort
 
 ```python
