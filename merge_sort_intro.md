@@ -1,3 +1,24 @@
+## Selection sort
+
+```python
+def selectsort(L):
+    for i in range(len(L)):
+        # Unsorted sub list
+        U = L[i:]
+        # The smallest in the sublist
+        m = min(U)
+        # index of the smallest 
+        j = L.index(m, i)
+        # swap
+        L[i], L[j] = L[j], L[i]
+    return L
+
+
+L = [12, 4, 7, 56, 2]
+selectsort(L)
+print(L)
+```
+
 ## Sorting
 
 Sorting is the arrangement of set in order
